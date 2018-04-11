@@ -1,0 +1,45 @@
+html{
+    width: 100%;
+}
+body{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    text-align: left;
+    vertical-align: baseline;
+    counter-reset: counter;
+    font-family: 'HeroNew', sans-serif;
+    font-weight: 300;
+    font-stretch: normal;
+}
+
+p, h1, h2, h3 {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+
+    &:hover, &:focus, &:active{
+        text-decoration: none;
+        color: inherit;
+    }
+}
+input{
+    outline: none;
+    &:hover, &:focus, &:active{
+        outline: none;
+    }
+}
+
+textarea{
+    outline: none;
+    
+    &:hover, &:focus, &:active{
+        outline: none;
+    }
+}

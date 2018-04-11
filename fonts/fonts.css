@@ -1,0 +1,31 @@
+@font-face {
+	font-family: "HeroNew";
+	src: url("heronew-light.eot");
+	src: url("heronew-light.eot?#iefix") format("embedded-opentype"),
+	url("heronew-light.woff") format("woff");
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "HeroNew";
+	src: url("heronew-medium.eot");
+	src: url("heronew-medium.eot?#iefix") format("embedded-opentype"),
+	url("heronew-medium.woff") format("woff");
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "DomaineSansDisplay";
+	src: url("DomaineSansDisplayLightItalic.otf") format("opentype");
+	font-weight: 300;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "DomaineSansDisplay";
+	src: url("DomaineSansDisplayLight.otf") format("opentype");
+	font-weight: 300;
+	font-style: normal;
+}

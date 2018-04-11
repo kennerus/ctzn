@@ -1,0 +1,36 @@
+.container {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 70px;
+    box-sizing: border-box;
+}
+
+.container_flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include breakpoint(max-width 790px) {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 790px) {
+    .container {
+        width: 100%;
+        padding: 0 20px;
+    }
+}
+
+@media (min-width: 790px) {
+    .container {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1440px) {
+    .container {
+        width: 1440px;
+    }
+}
