@@ -1,14 +1,14 @@
 .desc {
-	padding-top: 258px;
+	padding-top: 170px;
 	padding-bottom: 170px;
 
 	@include breakpoint(max-width 1440px) {
-		padding-top: 168px;
+		padding-top: 80px;
 		padding-bottom: 50px;
 	}
 
 	@include breakpoint(max-width 790px) {
-		padding-top: 118px;
+		padding-top: 40px;
 		padding-bottom: 10px;
 	}
 
@@ -93,6 +93,7 @@
 }
 
 .main {
+	padding-top: 88px;
 	&__content {
 		display: flex;
 		flex-direction: column;
