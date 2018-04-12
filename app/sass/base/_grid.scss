@@ -4,17 +4,40 @@
     margin-left: auto;
     padding: 0 70px;
     box-sizing: border-box;
-}
 
-.container_flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    &_flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
-    @include breakpoint(max-width 790px) {
-        flex-wrap: wrap;
+        @include breakpoint(max-width 790px) {
+            flex-wrap: wrap;
+        }
+    }
+
+    &_row {
+        display: flex;
+        align-items: flex-start;
+        margin-top: 50px;
+
+        @include breakpoint(max-width 1140px) {
+            flex-wrap: wrap;
+            margin-top: 0;
+        }
+    }
+
+    &_column {
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+
+        @include breakpoint(max-width 1140px) {
+            flex-wrap: wrap;
+            margin-top: 0;
+        }
     }
 }
+
 
 @media (max-width: 790px) {
     .container {
@@ -32,5 +55,94 @@
 @media (min-width: 1440px) {
     .container {
         width: 1440px;
+    }
+}
+
+.case-block {
+    &__sm {
+        width: 30.77%;
+
+        @include breakpoint(max-width 1140px) {
+            width: 100%;
+            margin-top: 50px;
+        }
+
+        @include breakpoint(max-width 790px) {
+            margin-top: 30px;
+        }
+
+        &_tablet {
+            @include breakpoint(max-width 1140px) {
+                width: calc(50% - 25px);
+                margin-top: 0;
+
+                &:first-child {
+                    margin-right: 50px;
+                }
+            }
+        }
+
+        &_project-first {
+            position: relative;
+            top: 60px;
+
+            @include breakpoint(max-width 1140px) {
+                position: static;
+            }
+        }
+    }
+
+    &__m {
+        width: 48.08%;
+
+        @include breakpoint(max-width 1140px) {
+            width: 100%;
+            margin-top: 50px;
+        }
+
+        @include breakpoint(max-width 790px) {
+            margin-top: 30px;
+        }
+    }
+
+    &__l {
+        width: 65.39%;
+
+        @include breakpoint(max-width 1140px) {
+            width: 100%;
+            margin-top: 50px;
+        }
+
+        @include breakpoint(max-width 790px) {
+            margin-top: 30px;
+        }
+    }
+
+    &__xl {
+        width: 100%;
+
+        @include breakpoint(max-width 790px) {
+            margin-top: 30px;
+        }
+
+        &_flex {
+            display: flex;
+
+            @include breakpoint(max-width 1140px) {
+                flex-wrap: wrap;
+            }
+        }
+    }
+}
+
+.mr50 {
+    margin-right: 50px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    @include breakpoint(max-width 1140px) {
+        margin-right: 0;
     }
 }
