@@ -75,6 +75,12 @@
 		border: solid 1px rgba(7, 7, 7, 0.2);
 		opacity: 0.8;
 
+		&:hover {
+			color: white;
+			background-color: black;
+			opacity: 1;
+		}
+
 		@include breakpoint(max-width 790px) {
 			margin-right: 10px;
 			padding: 5px 10px;
@@ -89,6 +95,10 @@
 		width: 180px;
 		height: 200px;
 		background-image: linear-gradient(to left, #fff, transparent);
+
+		@include breakpoint(max-width 790px) {
+			width: 80px
+		}
 	}
 }
 
@@ -251,6 +261,8 @@
 		line-height: 1.9;
 
 		&-link {
+			display: block;
+			width: 100%;
 			color: black;
 			@include linkHover(black);
 		}
@@ -260,6 +272,13 @@
 		font-size: 14px;
 		font-weight: 300;
 		line-height: 1;
+
+		&-link {
+			display: block;
+			width: 100%;
+			color: black;
+			@include linkHover(black);
+		}
 	}
 
 	&__desc {
@@ -296,10 +315,14 @@
 		font-weight: 300;
 		color: white;
 
-		@include breakpoint(max-width 790px) {
-			color: black;
+		&-link {
+			color: white;
+			@include linkHover(white);
 
-
+			@include breakpoint(max-width 790px) {
+				color: black;
+				@include linkHover(black);
+			}
 		}
 	}
 }
@@ -312,6 +335,7 @@
 	padding: 30px;
 	color: white;
 	box-sizing: border-box;
+	overflow: hidden;
 
 	&_a {
 		grid-column: 1 / span 3;

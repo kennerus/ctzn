@@ -112,7 +112,7 @@
 		@include breakpoint(max-width 790px) {
 			display: block;
 			width: 20px;
-			height: 13px;
+			height: 25px;
 			padding: 0;
 			background-color: transparent;
 			border: none;
@@ -130,22 +130,22 @@
 			}
 
 			&:before {
-				top: -1px;
+				top: 5px;
 			}
 
 			&:after {
-				bottom: 0;
+				bottom: 7px;
 			}
 		}
 
 		&_active {
 			&:before {
-				top: 5px;
+				top: 10px;
 				transform: rotate(-45deg);
 			}
 
 			&:after {
-				bottom: 6px;
+				bottom: 13px;
 				transform: rotate(45deg);
 			}
 		}
