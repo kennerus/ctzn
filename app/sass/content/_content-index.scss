@@ -140,6 +140,10 @@
 
 .block {
 	position: relative;
+
+	@include breakpoint(max-width 790px) {
+		width: 100%;
+	}
 	
 	&_a {
 		grid-column: 1 / span 1;
@@ -201,9 +205,15 @@
 	&__container {
 		&>.block:nth-child(2) {
 			margin-top: 65px;
+
+			@include breakpoint(max-width 1140px) {
+				margin-top: 50px;
+			}
 		}
 
 		@include breakpoint(max-width 1140px) {
+			display: flex;
+			flex-wrap: wrap;
 			width: 100%;
 		}
 	}

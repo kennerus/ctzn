@@ -110,6 +110,12 @@
 	}
 }
 
+.main__picture {
+	@include breakpoint(max-width 790px) {
+		margin-top: 50px;
+	}
+}
+
 .figcaption {
 	margin-top: 10px;
 	font-size: 12px;

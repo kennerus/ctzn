@@ -80,6 +80,16 @@
                     margin-right: 50px;
                 }
             }
+
+            @include breakpoint(max-width 790px) {
+                width: 100%;
+                margin-top: 30px;
+                margin-right: 0;
+
+                &:first-child {
+                    margin-right: 0;
+                }
+            }
         }
 
         &_project-first {

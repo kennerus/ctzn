@@ -22,8 +22,8 @@
 	<div class="container container_flex">
 		<div class="header__left">
 			<div class="header__logo">
-				<a href="index.html">
-					<img src="img/logo.svg" alt="">
+				<a class="header__logo-link" href="index.html">
+					<img class="header__logo-img" src="img/logo.svg" alt="">
 				</a>
 			</div>
 
@@ -50,8 +50,24 @@
 				<a class="header__text" href="#">EN</a>
 			</div>
 		</div>
-		
+
+		<button class="header__hamburger js_openNav"></button>
 	</div>
+
+	<nav class="header__nav-mob js_nav">
+		<button class="header__text header__dropdown-btn">
+			<span class="header__dropdown-span">Проекты</span>
+			<img src="img/icons/down-arrow.png" width="12" height="12" alt="">
+		</button>
+
+		<button class="header__text header__dropdown-btn">
+			<span class="header__dropdown-span">Экспертиза</span>
+			<img src="img/icons/down-arrow.png" width="12" height="12" alt="">
+		</button>
+
+		<a class="header__text header__about-link" href="#">Contacts</a>
+		<a class="header__text header__about-link" href="#">About</a>
+	</nav>
 </header>
 
 <!-- end header.html-->
@@ -99,7 +115,7 @@
 	</div>
 
 	<div class="container container_row">
-		<div class="block">
+		<div class="block main__picture">
 			<picture>
 				<source media="(min-width: 790px)" srcset="img/main/desk/City.jpg 2x">
 				<source media="(max-width: 790px)" srcset="img/main/mobile/City.jpg 2x">
@@ -166,6 +182,7 @@
 <!-- start html_close.html-->
 <script src="js/jquery-3.3.1.js"></script>
 <script src="js/slick.min.js"></script>
+<script src="js/global.js"></script>
 <script src="js/main.js"></script>
 <script src="js/project.js"></script>
 </body>
