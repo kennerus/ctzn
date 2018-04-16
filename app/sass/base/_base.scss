@@ -1,5 +1,6 @@
 html{
     width: 100%;
+    cursor: none;
 }
 body{
     width: 100%;
@@ -16,22 +17,25 @@ body{
     font-stretch: normal;
 }
 
-p, h1, h2, h3 {
+p, h1, h2, h3, button, span, figure, picture, img, section  {
     margin: 0;
+    cursor: none;
 }
 
 a {
     text-decoration: none;
     color: black;
+    cursor: none;
 
     &:hover, &:focus, &:active{
         text-decoration: none;
         color: inherit;
+        cursor: none;
     }
 }
 input{
     outline: none;
-    &:hover, &:focus, &:active{
+    &:hover, &:focus, &:active {
         outline: none;
     }
 }
@@ -47,6 +51,7 @@ textarea{
 figure {
     width: 100%;
     margin: 0;
+    cursor: url('../img/icons/cursor.png'), auto;
 }
 
 picture {

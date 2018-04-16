@@ -184,3 +184,12 @@
 		font-size: 19px;
 	}
 }
+
+.cursor {
+	position: fixed;
+	width: 20px;
+	height: 20px;
+	background-color: black;
+	border-radius: 50%;
+	z-index: 99999;
+}

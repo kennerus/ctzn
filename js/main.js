@@ -20,4 +20,5 @@ function moveSlider(event, sliderId, multiplier) {
 document.onmousemove = function(event) {
 	moveSlider(event, 'type', 2);
 	moveSlider(event, 'company', 1);
+	captureMousePositionOnMove(event, 'cursor')
 }
