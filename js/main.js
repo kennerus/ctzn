@@ -1,5 +1,5 @@
 $(function() {
-	if ($(window).width() < 1440) {
+	if ($(window).width() < 1140) {
 		$('.js_tagsSlider').slick({
 			infinite: false,
 			variableWidth: true,
@@ -12,8 +12,9 @@ $(function() {
 document.onmousemove = function(event) {
 	var coordsX = event.pageX;
 	var sliders = document.getElementsByClassName('js_tagsSlider');
-
 	for (var i = 0; i < sliders.length; i++) {
-		sliders[i].style.marginLeft = '-' + coordsX / 2 + 'px'
+		if(document.body.clientWidth >= 1140) {
+			sliders[i].style.marginLeft = '-' + coordsX / 2 + 'px'
+		}
 	}
 }
