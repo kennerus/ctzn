@@ -6,15 +6,15 @@
 	width: 100%;
 	padding: 25px 0;
 	background-color: white;
-	transition: all 0.2s;
-
-	&_border {
-		border-bottom: solid 1px #dcdcdc;
-		transition: all 0.2s;
-	}
+	border-bottom: 1px solid #ccc;
+	transition: all 0.4s;
 
 	@include breakpoint(max-width 790px) {
 		padding: 11px 0;
+	}
+
+	&__nav-up {
+		top: -100%;
 	}
 
 	&__left {
