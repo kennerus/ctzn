@@ -9,12 +9,15 @@ $(function() {
 	}
 })
 
-document.onmousemove = function(event) {
+function moveSlider(event, sliderId, multiplier) {
 	var coordsX = event.pageX;
-	var sliders = document.getElementsByClassName('js_tagsSlider');
-	for (var i = 0; i < sliders.length; i++) {
-		if(document.body.clientWidth >= 1140) {
-			sliders[i].style.marginLeft = '-' + coordsX / 2 + 'px'
-		}
+	sliderId = document.getElementById(sliderId);
+	if(document.body.clientWidth >= 1140) {
+		sliderId.style.marginLeft = '-' + coordsX / multiplier + 'px'
 	}
+}
+
+document.onmousemove = function(event) {
+	moveSlider(event, 'type', 2);
+	moveSlider(event, 'company', 1);
 }
