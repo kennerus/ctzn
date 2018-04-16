@@ -46,11 +46,16 @@
 			display: flex;
 			margin: 0 auto;
 			margin-top: 40px;
+			white-space: nowrap;
 
 			@include breakpoint(max-width 1440px) {
 				display: block;
 				width: 100%;
 				padding: 0 70px;
+			}
+
+			@include breakpoint(max-width 1140px) {
+				margin: 0 auto;
 			}
 
 			@include breakpoint(max-width 790px) {
@@ -107,6 +112,8 @@
 
 .main {
 	padding-top: 88px;
+	overflow-x: hidden;
+	
 	&__content {
 		display: flex;
 		flex-direction: column;
