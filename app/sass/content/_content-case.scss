@@ -6,22 +6,20 @@
 	margin-top: 50px;
 }
 
-.xs__pic-link {
-	display: block;
-	margin-top: 50px;
+.xs__img {
+	height: 280px;
 
-	&:first-child {
-		margin-top: 0;
+	@include breakpoint(max-width 790px) {
+		height: 360px;
 	}
+}
 
-	@include breakpoint(max-width 1140px) {
-		margin-top: 0;
-		margin-right: 50px;
+.l__img {
+	height: 670px;
+}
 
-		&:last-child {
-			margin-right: 0;
-		}
-	}
+.xl__img {
+	height: 600px;
 }
 
 .xs__img,
@@ -30,9 +28,14 @@
 .l__img,
 .xl__img {
 	width: 100%;
-	height: 100%;
 	object-fit: cover;
+
+	@include breakpoint(max-width 1140px) {
+		height: auto;
+	}
 }
+
+
 
 .main__nav {
 	display: flex;
@@ -40,7 +43,7 @@
 	align-items: flex-start;
 	font-size: 19px;
 
-	&-link {
+	a {
 		margin-top: 20px;
 		line-height: 1.68;
 		opacity: 0.5;
@@ -73,10 +76,38 @@
 	}
 }
 
-.picture__wrap {
+figure > div {
+	a {
+		display: block;
+		margin-top: 50px;
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		@include breakpoint(max-width 1140px) {
+			width: calc(50% - 25px);
+			margin-top: 0;
+			margin-right: 50px;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+
+		@include breakpoint(max-width 790px) {
+			width: 100%;
+			margin-top: 30px;
+			margin-right: 0;
+		}
+	}
+
 	@include breakpoint(max-width 1140px) {
-        display: flex;
-        overflow-x: auto;
-        overflow-y: hidden;
-    }
+		display: flex;
+		flex-wrap: wrap;
+		overflow-x: auto;
+		overflow-y: hidden;
+	}
+
 }
+

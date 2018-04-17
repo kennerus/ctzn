@@ -7,8 +7,6 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>CTZN</title>
     <link rel="stylesheet" href="fonts/fonts.css">
-    <link rel="stylesheet" href="css/slick.css">
-    <link rel="stylesheet" href="css/slick-theme.css">
     <link rel="stylesheet" href="css/libs.min.css">
     <link rel="stylesheet" href="css/styles.min.css">
 </head>
@@ -28,26 +26,51 @@
 			</div>
 
 			<div class="header__dropdowns">
-				<button class="header__text header__dropdown-btn">
-					<span class="header__dropdown-span">Проекты</span>
-					<img src="img/icons/down-arrow.png" width="12" height="12" alt="">
-				</button>
+				<div class="header__dropdown js_cursorPointer">
+					<button class="header__text header__dropdown-btn js_dropdownBtn">
+						<span class="header__dropdown-span">Клиенты</span>
+						<img class="js_dropdownArrow" src="img/icons/down-arrow.png" width="12" height="12" alt="">
+					</button>
 
-				<button class="header__text header__dropdown-btn">
-					<span class="header__dropdown-span">Экспертиза</span>
-					<img src="img/icons/down-arrow.png" width="12" height="12" alt="">
-				</button>
+					<ul class="header__dropdown-list js_headerDropdown">
+						<li class="header__dropdown-li"><a href="#">Связной</a></li>
+						<li class="header__dropdown-li"><a href="#">Empire Blackyard</a></li>
+						<li class="header__dropdown-li"><a href="#">Empire Business High Rise</a></li>
+						<li class="header__dropdown-li"><a href="#">Сириус «Арена»</a></li>
+						<li class="header__dropdown-li"><a href="#">Ельцин-Центр</a></li>
+						<li class="header__dropdown-li"><a href="#">Москва-Сити</a></li>
+						<li class="header__dropdown-li"><a href="#">Музей Москва-Сити</a></li>
+						<li class="header__dropdown-li"><a href="#">Площадь Сити</a></li>
+					</ul>
+				</div>
+
+
+				<div class="header__dropdown js_cursorPointer">
+					<button class="header__text header__dropdown-btn js_dropdownBtn">
+						<span class="header__dropdown-span">Экспертиза</span>
+						<img class="js_dropdownArrow" src="img/icons/down-arrow.png" width="12" height="12" alt="">
+					</button>
+
+					<ul class="header__dropdown-list js_headerDropdown">
+						<li class="header__dropdown-li"><a href="#">Брендинг</a></li>
+						<li class="header__dropdown-li"><a href="#">Навигация</a></li>
+						<li class="header__dropdown-li"><a href="#">Interior and retail design</a></li>
+						<li class="header__dropdown-li"><a href="#">Advertising</a></li>
+						<li class="header__dropdown-li"><a href="#">Business development</a></li>
+						<li class="header__dropdown-li"><a href="#">Digital</a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
 
 		<div class="header__right">
 			<div class="header__about-block">
-				<a class="header__text header__about-link" href="#">Contacts</a>
-				<a class="header__text header__about-link" href="#">About</a>
+				<a class="header__text header__about-link js_cursorPointer" href="#">Contacts</a>
+				<a class="header__text header__about-link js_cursorPointer" href="#">About</a>
 			</div>
 
 			<div class="header__lang">
-				<a class="header__text" href="#">EN</a>
+				<a class="header__text js_cursorPointer" href="#">EN</a>
 			</div>
 		</div>
 
@@ -55,18 +78,47 @@
 	</div>
 
 	<nav class="header__nav-mob js_nav">
-		<button class="header__text header__dropdown-btn">
-			<span class="header__dropdown-span">Проекты</span>
-			<img src="img/icons/down-arrow.png" width="12" height="12" alt="">
-		</button>
+		<div class="header__dropdowns-mob">
+			<div class="header__dropdown">
+				<button class="header__text header__dropdown-btn js_dropdownBtn">
+					<span class="header__dropdown-span">Клиенты</span>
+					<img class="js_dropdownArrow" src="img/icons/down-arrow.png" width="12" height="12" alt="">
+				</button>
 
-		<button class="header__text header__dropdown-btn">
-			<span class="header__dropdown-span">Экспертиза</span>
-			<img src="img/icons/down-arrow.png" width="12" height="12" alt="">
-		</button>
+				<ul class="header__dropdown-list js_headerDropdown">
+					<li class="header__dropdown-li"><a href="#">Связной</a></li>
+					<li class="header__dropdown-li"><a href="#">Empire Blackyard</a></li>
+					<li class="header__dropdown-li"><a href="#">Empire Business High Rise</a></li>
+					<li class="header__dropdown-li"><a href="#">Сириус «Арена»</a></li>
+					<li class="header__dropdown-li"><a href="#">Ельцин-Центр</a></li>
+					<li class="header__dropdown-li"><a href="#">Москва-Сити</a></li>
+					<li class="header__dropdown-li"><a href="#">Музей Москва-Сити</a></li>
+					<li class="header__dropdown-li"><a href="#">Площадь Сити</a></li>
+				</ul>
+			</div>
 
-		<a class="header__text header__about-link" href="#">Contacts</a>
-		<a class="header__text header__about-link" href="#">About</a>
+
+			<div class="header__dropdown">
+				<button class="header__text header__dropdown-btn js_dropdownBtn">
+					<span class="header__dropdown-span">Экспертиза</span>
+					<img class="js_dropdownArrow" src="img/icons/down-arrow.png" width="12" height="12" alt="">
+				</button>
+
+				<ul class="header__dropdown-list js_headerDropdown">
+					<li class="header__dropdown-li"><a href="#">Брендинг</a></li>
+					<li class="header__dropdown-li"><a href="#">Навигация</a></li>
+					<li class="header__dropdown-li"><a href="#">Interior and retail design</a></li>
+					<li class="header__dropdown-li"><a href="#">Advertising</a></li>
+					<li class="header__dropdown-li"><a href="#">Business development</a></li>
+					<li class="header__dropdown-li"><a href="#">Digital</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="header__links-mob">
+			<a class="header__text header__about-link" href="#">Contacts</a>
+			<a class="header__text header__about-link" href="#">About</a>
+		</div>
 	</nav>
 </header>
 
@@ -76,51 +128,53 @@
 <main class="main">
 	<div class="container container_row">
 		<div class="mr50 main__headline case-block__l">
-			<h1 class="main-case__title">Брендинг Москва-Сити</h1>
-			<p class="main-case__desc">Subheadline 1. When the management company of 'Moscow city' sought to change the way people perceive the biggest commercial district in Russia we approached to assist in developing a new experience</p>
+			<h1>Брендинг Москва-Сити</h1>
+			<p>Subheadline 1. When the management company of 'Moscow city' sought to change the way people perceive the biggest commercial district in Russia we approached to assist in developing a new experience</p>
 		</div>
 
 		<nav class="mr50 main__nav case-block__sm">
-			<a class="main__nav-link" href="#">Брендинг</a>
-			<a class="main__nav-link" href="#">Навигация</a>
-			<a class="main__nav-link" href="#">Events</a>
-			<a class="main__nav-link" href="#">Business development</a>
+			<a href="#">Брендинг</a>
+			<a href="#">Навигация</a>
+			<a href="#">Events</a>
+			<a href="#">Business development</a>
 		</nav>
 	</div>
 
 	<div class="container container_row">
-		<a href="#">
-			<picture class="main__picture">
-				<source media="(min-width: 790px)" srcset="img/main/desk/City.jpg 2x">
-				<source media="(max-width: 790px)" srcset="img/main/mobile/City.jpg 2x">
-				<img class="block__img block__img_biggest"   src="img/main/desk/City.jpg" alt="">
-			</picture>
-		</a>
-	</div>
-
-	<div class="container container_row">
-		<div class="mr50 case-block__sm">
-			<h3 class="title__sm">Задача</h3>
-			<p class="text__sm">Body. Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное.</p>
-		</div>
-
-		<div class="mr50 case-block__l">
-			<h3 class="title__sm">Результат</h3>
-			<p class="text__sm">Body. Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное. Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться.</p>
+		<div class="case-block__xl">
+			<a href="#">
+				<picture>
+					<source media="(min-width: 790px)" srcset="img/main/desk/City.jpg 2x">
+					<source media="(max-width: 790px)" srcset="img/main/mobile/City.jpg 2x">
+					<img class="block__img block__img_biggest"   src="img/main/desk/City.jpg" alt="">
+				</picture>
+			</a>
 		</div>
 	</div>
 
 	<div class="container container_row">
-		<div class="mr50 case-block__m">
-			<h2 class="title__m">Задача</h2>
-			<p class="text__m">Subheadline 2. Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Заполнение шаблона, а также реальное распределение</p>
+		<div class="mr50 case-block__sm title__sm text__sm">
+			<h3>Задача</h3>
+			<p>Body. Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное.</p>
+		</div>
+
+		<div class="mr50 case-block__l title__sm text__sm">
+			<h3>Результат</h3>
+			<p>Body. Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное. Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться.</p>
+		</div>
+	</div>
+
+	<div class="container container_row">
+		<div class="mr50 case-block__m title__m text__m">
+			<h2>Задача</h2>
+			<p>Subheadline 2. Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Заполнение шаблона, а также реальное распределение</p>
 		</div>
 	</div>
 
 	<div class="main-big">
-		<figure class="figure__full-width">
+		<figure>
 			<a href="#">
-				<picture class="full-width__pic">
+				<picture>
 					<source media="(max-width: 790px)" srcset="img/case/mobile/1.jpg">
 					<source media="(max-width: 1140px)" srcset="img/case/tablet/1.jpg">
 					<source media="(min-width: 1140px)" srcset="img/case/desk/1.jpg">
@@ -133,18 +187,18 @@
 	</div>
 
 	<div class="container container_row">
-		<div class="mr50 case-block__m">
-			<h3 class="title__sm">Подзаголовок</h3>
-			<p class="text__sm">Body. Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться.</p>
-			<p class="text__sm">Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации "Здесь ваш текст.. Здесь ваш текст..</p>
-			<p class="text__sm">Здесь ваш текст.." Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения. </p>
-			<p class="text__sm">За прошедшие годы текст Lorem Ipsum получил много версий. Некоторые версии появились по ошибке, некоторые - намеренно (например, юмористические варианты).</p>
+		<div class="mr50 case-block__m text__sm title__sm">
+			<h3>Подзаголовок</h3>
+			<p>Body. Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться.</p>
+			<p>Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации "Здесь ваш текст.. Здесь ваш текст..</p>
+			<p>Здесь ваш текст.." Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения. </p>
+			<p>За прошедшие годы текст Lorem Ipsum получил много версий. Некоторые версии появились по ошибке, некоторые - намеренно (например, юмористические варианты).</p>
 		</div>
 
 		<div class="mr50 case-block__m">
-			<figure class="figure__m">
+			<figure>
 				<a href="#">
-					<picture class="m__pic">
+					<picture>
 						<source media="(max-width: 790px)" srcset="img/case/mobile/2.jpg">
 						<source media="(max-width: 1140px)" srcset="img/case/tablet/2.jpg">
 						<source media="(min-width: 1140px)" srcset="img/case/desk/2.jpg">
@@ -152,16 +206,16 @@
 					</picture>
 				</a>
 
-				<figcaption class="figcaption">Подпись к фото</figcaption>
+				<figcaption>Подпись к фото</figcaption>
 			</figure>
 		</div>
 	</div>
 	
 	<div class="container container_row">
 		<div class="mr50 case-block__xl">
-			<figure class="figure__xl">
+			<figure>
 				<a href="#">
-					<picture class="xl__pic">
+					<picture>
 						<source media="(max-width: 790px)" srcset="img/case/tablet/3.jpg">
 						<source media="(max-width: 1140px)" srcset="img/case/tablet/3.jpg">
 						<source media="(min-width: 1140px)" srcset="img/case/desk/3.jpg">
@@ -169,23 +223,23 @@
 					</picture>
 				</a>
 
-				<figcaption class="figcaption">Подпись к фото</figcaption>
+				<figcaption>Подпись к фото</figcaption>
 			</figure>
 		</div>
 	</div>
 	
 	<div class="container container_row">
-		<div class="mr50 case-block__l">
-			<h2 class="title__m">Задача</h2>
-			<p class="text__m">Subheadline 2. Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Заполнение шаблона, а также реальное распределение</p>
+		<div class="mr50 case-block__l title__m text__m">
+			<h2>Задача</h2>
+			<p>Subheadline 2. Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Заполнение шаблона, а также реальное распределение</p>
 		</div>
 	</div>
 
 	<div class="container container_row">
 		<div class="mr50 case-block__xl">
-			<figure class="figure__xl">
+			<figure>
 				<a href="#">
-					<picture class="xl__pic">
+					<picture>
 						<source media="(max-width: 790px)" srcset="img/case/mobile/4.jpg">
 						<source media="(max-width: 1140px)" srcset="img/case/tablet/4.jpg">
 						<source media="(min-width: 1140px)" srcset="img/case/desk/4.jpg">
@@ -193,66 +247,66 @@
 					</picture>
 				</a>
 
-				<figcaption class="figcaption">Подпись к фото</figcaption>
+				<figcaption>Подпись к фото</figcaption>
 			</figure>
 		</div>
 	</div>
 
-	<div class="container container_row">
-		<div class="mr50 case-block__sm case-block__sm_tablet">
-			<h3 class="title__sm">Подзаголовок</h3>
-			<p class="text__sm">Body. Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное.</p>
-			<p class="text__sm">Заполнение шаблона, а также реальное распределение букв </p>
+	<div class="container container_row container_row-center">
+		<div class="mr50 case-block__sm case-block__sm_tablet title__sm text__sm">
+			<h3>Подзаголовок</h3>
+			<p>Body. Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное.</p>
+			<p>Заполнение шаблона, а также реальное распределение букв </p>
 		</div>
 
 		<div class="mr50 case-block__sm case-block__sm_tablet">
-			<figure class="figure__sm">
+			<figure>
 				<a href="#">
-					<picture class="sm__pic">
+					<picture>
 						<source media="(max-width: 790px)" srcset="img/case/mobile/5.jpg">
 						<source media="(max-width: 1140px)" srcset="img/case/tablet/5.jpg">
 						<source media="(min-width: 1140px)" srcset="img/case/desk/5.jpg">
-						<img class="sm__img"   src="img/case/desk/5.jpg" alt="">
+						<img class="sm__img" src="img/case/desk/5.jpg" alt="">
 					</picture>
 				</a>
 
-				<figcaption class="figcaption">Подпись к фото</figcaption>
+				<figcaption>Подпись к фото</figcaption>
 			</figure>
 		</div>
 	
 
 		<div class="mr50 case-block__sm">
-			<figure class="figure__xs">
-				<div class="picture__wrap">
-					<a class="xs__pic-link" href="#">
-						<picture class="xs__pic">
+			<figure>
+				<div>
+					<a href="#">
+						<picture>
 							<source media="(max-width: 790px)" srcset="img/case/mobile/6.jpg">
 							<source media="(max-width: 1140px)" srcset="img/case/tablet/6.jpg">
 							<source media="(min-width: 1140px)" srcset="img/case/desk/6.jpg">
-							<img class="xs__img"   src="img/case/desk/6.jpg" alt="">
+							<img class="xs__img" src="img/case/desk/6.jpg" alt="">
 						</picture>
 					</a>
 					
-					<a class="xs__pic-link" href="#">
-						<picture class="xs__pic">
+					<a href="#">
+						<picture>
 							<source media="(max-width: 790px)" srcset="img/case/mobile/7.jpg">
 							<source media="(max-width: 1140px)" srcset="img/case/tablet/7.jpg">
 							<source media="(min-width: 1140px)" srcset="img/case/desk/7.jpg">
-							<img class="xs__img"   src="img/case/desk/7.jpg" alt="">
+							<img class="xs__img" src="img/case/desk/7.jpg" alt="">
 						</picture>
 					</a>
 				</div>
 
-				<figcaption class="figcaption">Подпись к фото</figcaption>
+				<figcaption>Подпись к фото</figcaption>
 			</figure>
 		</div>
 	</div>
 	
 	<div class="container container_row">
 		<div class="mr50 case-block__l">
-			<figure class="figure__l">
+			<figure>
 				<a href="#">
-					<picture class="l__pic">
+					<picture>
 						<source media="(max-width: 790px)" srcset="img/case/mobile/8.jpg">
 						<source media="(max-width: 1140px)" srcset="img/case/tablet/8.jpg">
 						<source media="(min-width: 1140px)" srcset="img/case/desk/8.jpg">
@@ -260,21 +314,21 @@
 					</picture>
 				</a>
 
-				<figcaption class="figcaption">Подпись к фото</figcaption>
+				<figcaption>Подпись к фото</figcaption>
 			</figure>
 		</div>
 
-		<div class="mr50 case-block__sm">
-			<p class="text__sm">Body. Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное.</p>
-			<p class="text__sm">Заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации контента. Заполнение шаблона, а также реальное распределение букв не ползволяет</p>
+		<div class="mr50 case-block__sm text__sm">
+			<p>Body. Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное.</p>
+			<p>Заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации контента. Заполнение шаблона, а также реальное распределение букв не ползволяет</p>
 		</div>
 	</div>
 
 	<div class="container container_row">
 		<div class="mr50 case-block__xl">
-			<figure class="figure__xl">
+			<figure>
 				<a href="#">
-					<picture class="xl__pic">
+					<picture>
 						<source media="(max-width: 790px)" srcset="img/case/mobile/9.jpg">
 						<source media="(max-width: 1140px)" srcset="img/case/tablet/9.jpg">
 						<source media="(min-width: 1140px)" srcset="img/case/desk/9.jpg">
@@ -282,23 +336,23 @@
 					</picture>
 				</a>
 
-				<figcaption class="figcaption">Подпись к фото</figcaption>
+				<figcaption>Подпись к фото</figcaption>
 			</figure>
 		</div>
 	</div>
 
 	<div class="container container_row">
-		<div class="mr50 case-block__m">
-			<h2 class="title__m">Заголовок</h2>
-			<p class="text__m">Body. Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться.</p>
+		<div class="mr50 case-block__m title__m text__m">
+			<h2>Заголовок</h2>
+			<p>Body. Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться.</p>
 		</div>
 	</div>
 	
 	<div class="container container_row">
 		<div class="mr50 case-block__l">
-			<figure class="figure__l">
+			<figure>
 				<a href="#">
-					<picture class="l__pic">
+					<picture>
 						<source media="(max-width: 790px)" srcset="img/case/mobile/10.jpg">
 						<source media="(max-width: 1140px)" srcset="img/case/tablet/10.jpg">
 						<source media="(min-width: 1140px)" srcset="img/case/desk/10.jpg">
@@ -306,12 +360,12 @@
 					</picture>
 				</a>
 
-				<figcaption class="figcaption">Подпись к фото</figcaption>
+				<figcaption>Подпись к фото</figcaption>
 			</figure>
 		</div>
 
 		<div class="mr50 case-block__sm">
-			<figure class="figure__sm">
+			<figure>
 				<a href="#">
 					<picture class="sm__pic">
 						<source media="(max-width: 790px)" srcset="img/case/mobile/11.jpg">
@@ -321,16 +375,16 @@
 					</picture>
 				</a>
 
-				<figcaption class="figcaption">Подпись к фото</figcaption>
+				<figcaption>Подпись к фото</figcaption>
 			</figure>
 		</div>
 	</div>
 	
 	<div class="container container_row">
-		<div class="mr50 case-block_l">
-			<figure class="figure__l">
+		<div class="mr50 case-block__l">
+			<figure>
 				<a href="#">
-					<picture class="l__pic">
+					<picture>
 						<source media="(max-width: 790px)" srcset="img/case/mobile/12.jpg">
 						<source media="(max-width: 1140px)" srcset="img/case/tablet/12.jpg">
 						<source media="(min-width: 1140px)" srcset="img/case/desk/12.jpg">
@@ -338,20 +392,20 @@
 					</picture>
 				</a>
 
-				<figcaption class="figcaption">Подпись к фото</figcaption>
+				<figcaption>Подпись к фото</figcaption>
 			</figure>
 		</div>
 
-		<div class="mr50 case-block__sm">
-			<p class="text__sm">Body. Заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации контента. Заполнение шаблона, а также реальное распределение букв не ползволяет</p>
-			<p class="text__sm">Заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации контента. Заполнение шаблона, а также реальное распределение букв не ползволяет</p>
+		<div class="mr50 case-block__sm text__sm">
+			<p>Body. Заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации контента. Заполнение шаблона, а также реальное распределение букв не ползволяет</p>
+			<p>Заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации контента. Заполнение шаблона, а также реальное распределение букв не ползволяет</p>
 		</div>
 	</div>
 
 	<div class="main-big">
-		<figure class="figure__full-width">
+		<figure>
 			<a href="#">
-				<picture class="full-width__pic">
+				<picture>
 					<source media="(max-width: 790px)" srcset="img/case/mobile/13.jpg">
 					<source media="(max-width: 1140px)" srcset="img/case/tablet/13.jpg">
 					<source media="(min-width: 1140px)" srcset="img/case/desk/13.jpg">
@@ -359,23 +413,23 @@
 				</picture>
 			</a>
 
-			<figcaption class="figcaption container container_row">Подпись к фото</figcaption>
+			<figcaption class="container container_row">Подпись к фото</figcaption>
 		</figure>
 	</div>
 
 	<div class="container container_row">
-		<div class="mr50 case-block__l">
-			<h2 class="title__m">Заголовок</h2>
-			<p class="text__m">Body. Заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации контента. Заполнение шаблона, а также реальное распределение букв не ползволяет</p>
-			<p class="text__m">Заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации контента. Заполнение шаблона, а также реальное распределение букв не ползволяет</p>
+		<div class="mr50 case-block__l title__m text__m">
+			<h2>Заголовок</h2>
+			<p>Body. Заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации контента. Заполнение шаблона, а также реальное распределение букв не ползволяет</p>
+			<p>Заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации контента. Заполнение шаблона, а также реальное распределение букв не ползволяет</p>
 		</div>
 	</div>
 	
 	<div class="container container_row">
-		<div class="mr50 case-block_l">
-			<figure class="figure__l">
+		<div class="mr50 case-block__l">
+			<figure>
 				<a href="#">
-					<picture class="l__pic">
+					<picture>
 						<source media="(max-width: 790px)" srcset="img/case/mobile/14.jpg">
 						<source media="(max-width: 1140px)" srcset="img/case/tablet/14.jpg">
 						<source media="(min-width: 1140px)" srcset="img/case/desk/14.jpg">
@@ -383,21 +437,21 @@
 					</picture>
 				</a>
 
-				<figcaption class="figcaption">Подпись к фото</figcaption>
+				<figcaption>Подпись к фото</figcaption>
 			</figure>
 		</div>
 
-		<div class="mr50 case-block__sm">
-			<p class="text__sm">Body. Заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации контента. Заполнение шаблона, а также реальное распределение букв не ползволяет</p>
-			<p class="text__sm">Заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации контента. Заполнение шаблона, а также реальное распределение букв не ползволяет</p>
+		<div class="mr50 case-block__sm text__sm">
+			<p>Body. Заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации контента. Заполнение шаблона, а также реальное распределение букв не ползволяет</p>
+			<p>Заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации контента. Заполнение шаблона, а также реальное распределение букв не ползволяет</p>
 		</div>
 	</div>
 
 	<div class="container container_row">
-		<div class="mr50 case-block_l">
-			<figure class="figure__l">
+		<div class="mr50 case-block__l">
+			<figure>
 				<a href="#">
-					<picture class="l__pic">
+					<picture>
 						<source media="(max-width: 790px)" srcset="img/case/mobile/15.jpg">
 						<source media="(max-width: 1140px)" srcset="img/case/tablet/15.jpg">
 						<source media="(min-width: 1140px)" srcset="img/case/desk/15.jpg">
@@ -405,16 +459,16 @@
 					</picture>
 				</a>
 
-				<figcaption class="figcaption">Подпись к фото</figcaption>
+				<figcaption>Подпись к фото</figcaption>
 			</figure>
 		</div>
 	</div>
 
 	<div class="container container_row">
-		<div class="mr50 case-block_l">
-			<figure class="figure__l">
+		<div class="mr50 case-block__l">
+			<figure>
 				<a href="#">
-					<picture class="l__pic">
+					<picture>
 						<source media="(max-width: 790px)" srcset="img/case/mobile/16.jpg">
 						<source media="(max-width: 1140px)" srcset="img/case/tablet/16.jpg">
 						<source media="(min-width: 1140px)" srcset="img/case/desk/16.jpg">
@@ -422,7 +476,7 @@
 					</picture>
 				</a>
 
-				<figcaption class="figcaption">Подпись к фото</figcaption>
+				<figcaption>Подпись к фото</figcaption>
 			</figure>
 		</div>
 	</div>

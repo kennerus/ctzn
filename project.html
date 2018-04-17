@@ -7,8 +7,6 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>CTZN</title>
     <link rel="stylesheet" href="fonts/fonts.css">
-    <link rel="stylesheet" href="css/slick.css">
-    <link rel="stylesheet" href="css/slick-theme.css">
     <link rel="stylesheet" href="css/libs.min.css">
     <link rel="stylesheet" href="css/styles.min.css">
 </head>
@@ -28,26 +26,51 @@
 			</div>
 
 			<div class="header__dropdowns">
-				<button class="header__text header__dropdown-btn">
-					<span class="header__dropdown-span">Проекты</span>
-					<img src="img/icons/down-arrow.png" width="12" height="12" alt="">
-				</button>
+				<div class="header__dropdown js_cursorPointer">
+					<button class="header__text header__dropdown-btn js_dropdownBtn">
+						<span class="header__dropdown-span">Клиенты</span>
+						<img class="js_dropdownArrow" src="img/icons/down-arrow.png" width="12" height="12" alt="">
+					</button>
 
-				<button class="header__text header__dropdown-btn">
-					<span class="header__dropdown-span">Экспертиза</span>
-					<img src="img/icons/down-arrow.png" width="12" height="12" alt="">
-				</button>
+					<ul class="header__dropdown-list js_headerDropdown">
+						<li class="header__dropdown-li"><a href="#">Связной</a></li>
+						<li class="header__dropdown-li"><a href="#">Empire Blackyard</a></li>
+						<li class="header__dropdown-li"><a href="#">Empire Business High Rise</a></li>
+						<li class="header__dropdown-li"><a href="#">Сириус «Арена»</a></li>
+						<li class="header__dropdown-li"><a href="#">Ельцин-Центр</a></li>
+						<li class="header__dropdown-li"><a href="#">Москва-Сити</a></li>
+						<li class="header__dropdown-li"><a href="#">Музей Москва-Сити</a></li>
+						<li class="header__dropdown-li"><a href="#">Площадь Сити</a></li>
+					</ul>
+				</div>
+
+
+				<div class="header__dropdown js_cursorPointer">
+					<button class="header__text header__dropdown-btn js_dropdownBtn">
+						<span class="header__dropdown-span">Экспертиза</span>
+						<img class="js_dropdownArrow" src="img/icons/down-arrow.png" width="12" height="12" alt="">
+					</button>
+
+					<ul class="header__dropdown-list js_headerDropdown">
+						<li class="header__dropdown-li"><a href="#">Брендинг</a></li>
+						<li class="header__dropdown-li"><a href="#">Навигация</a></li>
+						<li class="header__dropdown-li"><a href="#">Interior and retail design</a></li>
+						<li class="header__dropdown-li"><a href="#">Advertising</a></li>
+						<li class="header__dropdown-li"><a href="#">Business development</a></li>
+						<li class="header__dropdown-li"><a href="#">Digital</a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
 
 		<div class="header__right">
 			<div class="header__about-block">
-				<a class="header__text header__about-link" href="#">Contacts</a>
-				<a class="header__text header__about-link" href="#">About</a>
+				<a class="header__text header__about-link js_cursorPointer" href="#">Contacts</a>
+				<a class="header__text header__about-link js_cursorPointer" href="#">About</a>
 			</div>
 
 			<div class="header__lang">
-				<a class="header__text" href="#">EN</a>
+				<a class="header__text js_cursorPointer" href="#">EN</a>
 			</div>
 		</div>
 
@@ -55,18 +78,47 @@
 	</div>
 
 	<nav class="header__nav-mob js_nav">
-		<button class="header__text header__dropdown-btn">
-			<span class="header__dropdown-span">Проекты</span>
-			<img src="img/icons/down-arrow.png" width="12" height="12" alt="">
-		</button>
+		<div class="header__dropdowns-mob">
+			<div class="header__dropdown">
+				<button class="header__text header__dropdown-btn js_dropdownBtn">
+					<span class="header__dropdown-span">Клиенты</span>
+					<img class="js_dropdownArrow" src="img/icons/down-arrow.png" width="12" height="12" alt="">
+				</button>
 
-		<button class="header__text header__dropdown-btn">
-			<span class="header__dropdown-span">Экспертиза</span>
-			<img src="img/icons/down-arrow.png" width="12" height="12" alt="">
-		</button>
+				<ul class="header__dropdown-list js_headerDropdown">
+					<li class="header__dropdown-li"><a href="#">Связной</a></li>
+					<li class="header__dropdown-li"><a href="#">Empire Blackyard</a></li>
+					<li class="header__dropdown-li"><a href="#">Empire Business High Rise</a></li>
+					<li class="header__dropdown-li"><a href="#">Сириус «Арена»</a></li>
+					<li class="header__dropdown-li"><a href="#">Ельцин-Центр</a></li>
+					<li class="header__dropdown-li"><a href="#">Москва-Сити</a></li>
+					<li class="header__dropdown-li"><a href="#">Музей Москва-Сити</a></li>
+					<li class="header__dropdown-li"><a href="#">Площадь Сити</a></li>
+				</ul>
+			</div>
 
-		<a class="header__text header__about-link" href="#">Contacts</a>
-		<a class="header__text header__about-link" href="#">About</a>
+
+			<div class="header__dropdown">
+				<button class="header__text header__dropdown-btn js_dropdownBtn">
+					<span class="header__dropdown-span">Экспертиза</span>
+					<img class="js_dropdownArrow" src="img/icons/down-arrow.png" width="12" height="12" alt="">
+				</button>
+
+				<ul class="header__dropdown-list js_headerDropdown">
+					<li class="header__dropdown-li"><a href="#">Брендинг</a></li>
+					<li class="header__dropdown-li"><a href="#">Навигация</a></li>
+					<li class="header__dropdown-li"><a href="#">Interior and retail design</a></li>
+					<li class="header__dropdown-li"><a href="#">Advertising</a></li>
+					<li class="header__dropdown-li"><a href="#">Business development</a></li>
+					<li class="header__dropdown-li"><a href="#">Digital</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="header__links-mob">
+			<a class="header__text header__about-link" href="#">Contacts</a>
+			<a class="header__text header__about-link" href="#">About</a>
+		</div>
 	</nav>
 </header>
 
@@ -76,19 +128,19 @@
 <main class="main">
 	<div class="container container_column js_container">
 		<div class="mr50 main__headline case-block__l">
-			<h1 class="main-case__title">Брендинг Москва-Сити</h1>
-			<p class="text__sm">Body. When the management company of 'Moscow city' sought to change the way people perceive the biggest commercial district in Russia we approached to assist in developing a new experience and a new attitude towards the place.</p>
-			<p class="text__sm hidden">The Russian capital has a new financial and business district: 'Moscow City'. The high-rise development that occupies an area of 60 hectares has made a significant change to the city skyline, which can now join ranks with the likes of London, Frankfurt and New York City.</p>
-			<p class="text__sm hidden">The outcome was the transformation of the space that led to a new experience both for those who work within the business center and for those who wished to visit and feel the real spirit of business acumen and innovation behind the brand that we developed.</p>
+			<h1>Брендинг Москва-Сити</h1>
+			<p>Body. When the management company of 'Moscow city' sought to change the way people perceive the biggest commercial district in Russia we approached to assist in developing a new experience and a new attitude towards the place.</p>
+			<p class="hidden">The Russian capital has a new financial and business district: 'Moscow City'. The high-rise development that occupies an area of 60 hectares has made a significant change to the city skyline, which can now join ranks with the likes of London, Frankfurt and New York City.</p>
+			<p class="hidden">The outcome was the transformation of the space that led to a new experience both for those who work within the business center and for those who wished to visit and feel the real spirit of business acumen and innovation behind the brand that we developed.</p>
 		</div>
 
 		<button class="close-text hidden_flex js_hideText">
 			<img src="img/icons/close.svg" width="26" height="26" alt="">
 		</button>
 
-		<div class="case-block__sm hidden case-block__sm_project-first">
-			<h3 class="title__sm">Задача</h3>
-			<p class="text__sm">Body. Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное.</p>
+		<div class="case-block__sm hidden case-block__sm_project-first title__sm text__sm">
+			<h3>Задача</h3>
+			<p>Body. Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное.</p>
 		</div>
 
 		<button class="slide-down js_slideText">
@@ -98,19 +150,19 @@
 	</div>
 
 	<div class="container container_row hidden_flex">
-		<div class="mr50 case-block__sm">
-			<h3 class="title__sm">Задача</h3>
-			<p class="text__sm">Body. Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное.</p>
+		<div class="mr50 case-block__sm title__sm text__sm">
+			<h3>Задача</h3>
+			<p>Body. Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное.</p>
 		</div>
 
-		<div class="mr50 case-block__sm">
-			<h3 class="title__sm">Задача</h3>
-			<p class="text__sm">Body. Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное.</p>
+		<div class="mr50 case-block__sm title__sm text__sm">
+			<h3>Задача</h3>
+			<p>Body. Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное.</p>
 		</div>
 
-		<div class="mr50 case-block__sm">
-			<h3 class="title__sm">Задача</h3>
-			<p class="text__sm">Body. Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное.</p>
+		<div class="mr50 case-block__sm title__sm text__sm">
+			<h3>Задача</h3>
+			<p>Body. Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное.</p>
 		</div>
 	</div>
 
@@ -124,8 +176,8 @@
 				</picture>
 			</a>
 
-			<div class="block__desc block__desc_biggest">
-				<h2 class="biggest__title"><a class="biggest__title-link" href="#">Брендинг</a></h2>
+			<div class="block__desc block__desc_biggest biggest__title">
+				<h2><a href="#">Брендинг</a></h2>
 			</div>
 		</div>
 	</div>
@@ -139,7 +191,7 @@
 					</a>
 
 					<div class="block__desc">
-						<h2 class="block__title"><a class="block__title-link" href="#">Business development</a></h2>
+						<h2><a href="#">Business development</a></h2>
 					</div>
 				</div>
 
@@ -149,7 +201,7 @@
 					</a>
 
 					<div class="block__desc">
-						<h2 class="block__title"><a class="block__title-link" href="#">Public spaces</a></h2>
+						<h2><a href="#">Public spaces</a></h2>
 					</div>
 				</div>
 			</div>
@@ -164,7 +216,7 @@
 					</a>
 
 					<div class="block__desc">
-						<h2 class="block__title"><a class="block__title-link" href="#">Навигация</a></h2>
+						<h2><a href="#">Навигация</a></h2>
 					</div>
 				</div>
 		</div>
@@ -193,6 +245,7 @@
 <div id="cursor" class="cursor"></div>
 <script src="js/jquery-3.3.1.js"></script>
 <script src="js/global.js"></script>
+<script src="js/project.js"></script>
 </body>
 </html>
 <!-- end html_close-project.html-->

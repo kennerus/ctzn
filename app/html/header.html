@@ -8,26 +8,51 @@
 			</div>
 
 			<div class="header__dropdowns">
-				<button class="header__text header__dropdown-btn">
-					<span class="header__dropdown-span">Проекты</span>
-					<img src="img/icons/down-arrow.png" width="12" height="12" alt="">
-				</button>
+				<div class="header__dropdown js_cursorPointer">
+					<button class="header__text header__dropdown-btn js_dropdownBtn">
+						<span class="header__dropdown-span">Клиенты</span>
+						<img class="js_dropdownArrow" src="img/icons/down-arrow.png" width="12" height="12" alt="">
+					</button>
 
-				<button class="header__text header__dropdown-btn">
-					<span class="header__dropdown-span">Экспертиза</span>
-					<img src="img/icons/down-arrow.png" width="12" height="12" alt="">
-				</button>
+					<ul class="header__dropdown-list js_headerDropdown">
+						<li class="header__dropdown-li"><a href="#">Связной</a></li>
+						<li class="header__dropdown-li"><a href="#">Empire Blackyard</a></li>
+						<li class="header__dropdown-li"><a href="#">Empire Business High Rise</a></li>
+						<li class="header__dropdown-li"><a href="#">Сириус «Арена»</a></li>
+						<li class="header__dropdown-li"><a href="#">Ельцин-Центр</a></li>
+						<li class="header__dropdown-li"><a href="#">Москва-Сити</a></li>
+						<li class="header__dropdown-li"><a href="#">Музей Москва-Сити</a></li>
+						<li class="header__dropdown-li"><a href="#">Площадь Сити</a></li>
+					</ul>
+				</div>
+
+
+				<div class="header__dropdown js_cursorPointer">
+					<button class="header__text header__dropdown-btn js_dropdownBtn">
+						<span class="header__dropdown-span">Экспертиза</span>
+						<img class="js_dropdownArrow" src="img/icons/down-arrow.png" width="12" height="12" alt="">
+					</button>
+
+					<ul class="header__dropdown-list js_headerDropdown">
+						<li class="header__dropdown-li"><a href="#">Брендинг</a></li>
+						<li class="header__dropdown-li"><a href="#">Навигация</a></li>
+						<li class="header__dropdown-li"><a href="#">Interior and retail design</a></li>
+						<li class="header__dropdown-li"><a href="#">Advertising</a></li>
+						<li class="header__dropdown-li"><a href="#">Business development</a></li>
+						<li class="header__dropdown-li"><a href="#">Digital</a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
 
 		<div class="header__right">
 			<div class="header__about-block">
-				<a class="header__text header__about-link" href="#">Contacts</a>
-				<a class="header__text header__about-link" href="#">About</a>
+				<a class="header__text header__about-link js_cursorPointer" href="#">Contacts</a>
+				<a class="header__text header__about-link js_cursorPointer" href="#">About</a>
 			</div>
 
 			<div class="header__lang">
-				<a class="header__text" href="#">EN</a>
+				<a class="header__text js_cursorPointer" href="#">EN</a>
 			</div>
 		</div>
 
@@ -35,17 +60,46 @@
 	</div>
 
 	<nav class="header__nav-mob js_nav">
-		<button class="header__text header__dropdown-btn">
-			<span class="header__dropdown-span">Проекты</span>
-			<img src="img/icons/down-arrow.png" width="12" height="12" alt="">
-		</button>
+		<div class="header__dropdowns-mob">
+			<div class="header__dropdown">
+				<button class="header__text header__dropdown-btn js_dropdownBtn">
+					<span class="header__dropdown-span">Клиенты</span>
+					<img class="js_dropdownArrow" src="img/icons/down-arrow.png" width="12" height="12" alt="">
+				</button>
 
-		<button class="header__text header__dropdown-btn">
-			<span class="header__dropdown-span">Экспертиза</span>
-			<img src="img/icons/down-arrow.png" width="12" height="12" alt="">
-		</button>
+				<ul class="header__dropdown-list js_headerDropdown">
+					<li class="header__dropdown-li"><a href="#">Связной</a></li>
+					<li class="header__dropdown-li"><a href="#">Empire Blackyard</a></li>
+					<li class="header__dropdown-li"><a href="#">Empire Business High Rise</a></li>
+					<li class="header__dropdown-li"><a href="#">Сириус «Арена»</a></li>
+					<li class="header__dropdown-li"><a href="#">Ельцин-Центр</a></li>
+					<li class="header__dropdown-li"><a href="#">Москва-Сити</a></li>
+					<li class="header__dropdown-li"><a href="#">Музей Москва-Сити</a></li>
+					<li class="header__dropdown-li"><a href="#">Площадь Сити</a></li>
+				</ul>
+			</div>
 
-		<a class="header__text header__about-link" href="#">Contacts</a>
-		<a class="header__text header__about-link" href="#">About</a>
+
+			<div class="header__dropdown">
+				<button class="header__text header__dropdown-btn js_dropdownBtn">
+					<span class="header__dropdown-span">Экспертиза</span>
+					<img class="js_dropdownArrow" src="img/icons/down-arrow.png" width="12" height="12" alt="">
+				</button>
+
+				<ul class="header__dropdown-list js_headerDropdown">
+					<li class="header__dropdown-li"><a href="#">Брендинг</a></li>
+					<li class="header__dropdown-li"><a href="#">Навигация</a></li>
+					<li class="header__dropdown-li"><a href="#">Interior and retail design</a></li>
+					<li class="header__dropdown-li"><a href="#">Advertising</a></li>
+					<li class="header__dropdown-li"><a href="#">Business development</a></li>
+					<li class="header__dropdown-li"><a href="#">Digital</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="header__links-mob">
+			<a class="header__text header__about-link" href="#">Contacts</a>
+			<a class="header__text header__about-link" href="#">About</a>
+		</div>
 	</nav>
 </header>

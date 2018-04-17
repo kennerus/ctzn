@@ -2,9 +2,28 @@ $(function() {
 	$(document).on('click', '.js_openNav', function() {
 		$(this).toggleClass('header__hamburger_active');
 		$('.js_nav').toggleClass('header__nav-mob_active');
+        $('body').toggleClass('overflow-hidden');
+        $('.js_header').toggleClass('header_border');
 	})
 
-	// $('body').awesomeCursor('pencil');
+    $(document).on('click', '.js_dropdownBtn', function() {
+        $(this).next('.js_headerDropdown').toggleClass('header__dropdown_opened');
+        if ($(window).width() < 1140) {
+            $(this).find('.js_dropdownArrow').toggleClass('header__rotate-arrow');
+        }
+    });
+
+    $(document).on('mouseenter', '.js_cursorPointer', function() {
+        $(this).css('cursor', 'pointer');
+        $(this).find('*').css('cursor', 'pointer');
+        $('#cursor').css('display', 'none');
+    })
+
+    $(document).on('mouseleave', '.js_cursorPointer', function() {
+        $(this).css('cursor', 'none');
+        $(this).find('*').css('cursor', 'none');
+        $('#cursor').css('display', 'block');
+    })
 })
 
 // Hide Header on on scroll down
@@ -53,21 +72,4 @@ function hasScrolled() {
     
     lastScrollTop = st;
 }
-
-function setDefaultCursor(cursorId, coordX, coordY) {
-	cursorId = document.getElementById(cursorId);
-	cursorId.style.top = coordY + 'px';
-	cursorId.style.left = coordX + 'px';
-}
-
-function captureMousePositionOnMove(event, cursorId){
-    xMousePos = event.pageX;
-    yMousePos = event.pageY - $(document).scrollTop();
-    window.status = "x = " + xMousePos + " y = " + yMousePos;
-    setDefaultCursor(cursorId, xMousePos, yMousePos);  
-}
-
-$(window).scroll(function(event){
-    didScroll = true;
-});
 
