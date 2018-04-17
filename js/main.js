@@ -25,10 +25,6 @@ function getCursorPosition(event, cursorId){
     setDefaultCursor(cursorId, xMousePos, yMousePos);  
 }
 
-$(window).scroll(function(event){
-    didScroll = true;
-});
-
 function moveSlider(event, sliderId, multiplier) {
     var coordsX = event.pageX;
     sliderId = document.getElementById(sliderId);

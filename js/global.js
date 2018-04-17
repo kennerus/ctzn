@@ -73,3 +73,6 @@ function hasScrolled() {
     lastScrollTop = st;
 }
 
+$(window).scroll(function(event){
+    didScroll = true;
+});
