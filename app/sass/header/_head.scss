@@ -221,14 +221,14 @@
 
 	&__nav-mob {
 		position: fixed;
-		top: 49px;
+		top: 48px;
 		left: 0;
 		display: none;
 		flex-direction: column;
 		justify-content: space-between;
 		align-items: flex-start;
 		width: 100%;
-		height: calc(100vh - 49px);
+		height: calc(100vh - 48px);
 		padding: 30px 20px;
 		background-color: white;
 		box-sizing: border-box;

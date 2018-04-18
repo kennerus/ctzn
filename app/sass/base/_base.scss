@@ -14,7 +14,6 @@ body {
     font-family: 'HeroNew', sans-serif;
     font-weight: 300;
     font-stretch: normal;
-    outline: none;
 }
 
 .body__custom-cursor {
@@ -27,6 +26,14 @@ body {
 
 p, h1, h2, h3, button, span, figure, picture, img, section  {
     margin: 0;
+}
+
+button, a {
+    outline: none;
+
+    &:focus, &:active {
+        outline: none;
+    }
 }
 
 a {
