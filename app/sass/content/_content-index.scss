@@ -76,7 +76,6 @@
 
 			@include breakpoint(max-width 790px) {
 				margin-top: 25px;
-				padding: 0 20px;
 			}
 
 			&:first-child {
@@ -730,5 +729,15 @@
 
 	@include breakpoint(max-width 1440px) {
 		height: 60px;
+	}
+}
+
+.slick-list.draggable {
+	@include breakpoint(max-width 1440px) {
+		padding: 0 70px;
+	}
+
+	@include breakpoint(max-width 790px) {
+		padding: 0 20px;
 	}
 }

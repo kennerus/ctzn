@@ -69,6 +69,7 @@
 	font-size: 24px;
 	line-height: 1.67;
 	letter-spacing: -0.1px;
+	transition: all 0.2s linear;
 
 	&:first-child {
 		margin-top: 0;
@@ -155,22 +156,26 @@ figcaption {
 	top: 144px;
 	right: 0;
 	z-index: 5;
-	display: flex;
+	display: none;
 	padding: 10px;
 	background-color: white;
 	border: none;
 	border-radius: 50%;
 	cursor: pointer;
+	transition: all 0.2s;
 
 	@include breakpoint(max-width 790px) {
-		top: 50px;
+		top: 60px;
 		right: 0;
 	}
 }
 
 .hidden,
 .hidden_flex {
-	display: none !important;
+	max-height: 0;
+	overflow: hidden;
+	margin: 0 auto !important;
+	transition: all 0.2s linear;
 }
 
 .slide-down {
@@ -197,7 +202,10 @@ figcaption {
 
 .cursor {
 	position: fixed;
+	top: 15px;
 	z-index: 99999;
+	display: flex;
+	align-items: center;
 	width: 20px;
 	height: 20px;
 	color: white;
@@ -213,22 +221,23 @@ figcaption {
 		margin-right: 5px;
 		background-color: white;
 		border-radius: 12px;
+	}
 
-		&:before {
-			content: '';
-			display: block;
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			width: 5px;
-			height: 5px;
-			background-color: black;
-			border-radius: 50%;
-		}
+	&__pupil {
+		display: block;
+		position: absolute;
+		top: 25%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 5px;
+		height: 5px;
+		background-color: black;
+		border-radius: 50%;
 	}
 
 	&__text {
+		position: relative;
+		top: 1px;
 		font-size: 12px;
 		letter-spacing: -0.1px;
 	}
@@ -238,4 +247,8 @@ figcaption {
 		width: 90px;
 		border-radius: 10px;
 	}
+}
+
+.active-item {
+	opacity: 0.5;
 }

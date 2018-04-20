@@ -1,25 +1,44 @@
 $(function() {
-	$(document).on('click', '.js_openNav', function() {
-		$(this).toggleClass('header__hamburger_active');
-		$('.js_nav').toggleClass('header__nav-mob_active');
+    if ($('#contacts').length > 0) {
+        $('.js_contacts').addClass('active-item');
+    }
+
+    if ($('#about').length > 0) {
+        $('.js_about').addClass('active-item');
+    }
+
+    // mob menu
+    $(document).on('click', '.js_openNav', function() {
+        $(this).toggleClass('header__hamburger_active');
+        $('.js_nav').toggleClass('header__nav-mob_active');
         $('body').toggleClass('overflow-hidden');
         $('.js_header').toggleClass('header_border');
-	})
+    })
 
+    // dropdown menu
     $(document).on('click', '.js_dropdownBtn', function() {
+        $('.js_dropdownBtn').removeClass('active-item');
+        $('.js_dropdownArrow').removeClass('header__rotate-arrow');
         if($(this).next('.js_headerDropdown').hasClass('header__dropdown_opened')) {
             $('.js_headerDropdown').removeClass('header__dropdown_opened');
         }
         else {
             $('.js_headerDropdown').removeClass('header__dropdown_opened');
             $(this).next('.js_headerDropdown').addClass('header__dropdown_opened');
-        }
-
-        if ($(window).width() < 1140) {
-            $(this).find('.js_dropdownArrow').toggleClass('header__rotate-arrow');
+            $(this).addClass('active-item');
+            $(this).find('.js_dropdownArrow').addClass('header__rotate-arrow');
         }
     });
 
+    $(document).on('mouseleave', '.js_headerDropdown', function() {
+        if ($(window).width() > 1140) {
+            $(this).removeClass('header__dropdown_opened');
+            $('.js_dropdownBtn').removeClass('active-item');
+            $('.js_dropdownArrow').removeClass('header__rotate-arrow');
+        }
+    });
+
+    // text truncate
     if ($(window).width() < 1140) {
         $('.text-block p').dotdotdot({
             ellipsis: "\u2026 ",
@@ -27,12 +46,7 @@ $(function() {
        });
     }
 
-    // $(document).on('mouseleave', '.js_headerDropdown', function() {
-    //     if ($(window).width() > 1140) {
-    //         $(this).removeClass('header__dropdown_opened');
-    //     }
-    // });
-
+    // hide-show custom cursor on header elements
     $(document).on('mouseenter', '.js_cursorPointer', function() {
         $(this).css('cursor', 'pointer');
         $(this).find('*').css('cursor', 'pointer');
@@ -61,7 +75,13 @@ setInterval(function() {
         hasScrolled();
         didScroll = false;
     }
-}, 250);
+}, 5);
+
+function getButtonPos() {
+    var hideText = $('.js_hideText');
+    var hideTextPos = (($(window).width() - 1440) / 2) + 'px';
+    hideText.css('right', hideTextPos);
+}
 
 function hasScrolled() {
     var st = $(this).scrollTop();
@@ -89,10 +109,45 @@ function hasScrolled() {
     else {
     	$('.js_header').removeClass('header_border');
     }
+
+    
     
     lastScrollTop = st;
 }
 
 $(window).scroll(function(event){
     didScroll = true;
+
+    if($('.js_hideText').length > 0 && $('.js_hideText').hasClass('js_activeFlex')) {
+        var btnClose = $('.js_hideText');
+        var mainPos = $('.main__picture').offset();
+        var btnCloseOffset = btnClose.offset();
+        var btnCloseBot = btnCloseOffset.top + btnClose.height();
+        
+        if (mainPos.top <= btnCloseBot) {
+            btnClose.css({
+                position: 'absolute',
+                top: (mainPos.top - 188) + 'px'
+            });
+        }
+        else if ($('.js_header').hasClass('header__nav-up')) {
+            $('.js_hideText').css('top', '10px');
+        }
+        else {
+            if($(window).width() > 1440) {
+                getButtonPos();
+                btnClose.css({
+                    position: 'fixed',
+                    top: '144px'
+                })
+            }
+            if($(window).width() < 1440) {
+                btnClose.css({
+                    position: 'fixed',
+                    top: '60px'
+                })
+            }
+        }
+        
+    }
 });
