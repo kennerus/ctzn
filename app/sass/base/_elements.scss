@@ -202,7 +202,8 @@ figcaption {
 
 .cursor {
 	position: fixed;
-	top: 15px;
+	top: 50%;
+	left: 50%;
 	z-index: 99999;
 	display: flex;
 	align-items: center;
@@ -236,8 +237,6 @@ figcaption {
 	}
 
 	&__text {
-		position: relative;
-		top: 1px;
 		font-size: 12px;
 		letter-spacing: -0.1px;
 	}
@@ -246,6 +245,10 @@ figcaption {
 		padding: 0 6px;
 		width: 90px;
 		border-radius: 10px;
+	}
+
+	@include breakpoint(max-width 1440px) {
+		display: none;
 	}
 }
 

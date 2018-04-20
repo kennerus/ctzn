@@ -80,7 +80,13 @@
 
 			&:first-child {
 				margin-top: 0;
-			}	
+			}
+
+			div:last-child {
+				a {
+					margin-right: 0;
+				}
+			}
 
 			a {
 				display: inline-block;
@@ -220,10 +226,6 @@
 		object-fit: cover;
 	}
 
-	div {
-
-	}
-
 	&_biggest {
 		margin-top: 50px;
 
@@ -323,7 +325,7 @@
 		font-size: 32px;
 		font-weight: 500;
 
-		&>a {
+		&>a span {
 			color: white;
 			@include linkHover(white);
 

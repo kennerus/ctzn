@@ -66,11 +66,36 @@ $(function() {
         var title = _this.querySelector('h2');
     }
 
-    function moveSlider(event, sliderId, multiplier) {
-        var coordsX = event.pageX;
+    function calculateWidth(currentId, blockSelector) {
+        var current = document.getElementById(currentId);
+        var parent = current.parentElement;
+        var blocks = current.querySelectorAll(blockSelector);
+        var blocksWidth = 0;
+        for(var i = 0; i < blocks.length; i++) {
+            blocksWidth += blocks[i].offsetWidth;
+        }
+        current.style.width = blocksWidth + 'px';
+        return blocksWidth;
+    }
+
+    calculateWidth('type', 'div');
+    calculateWidth('company', 'div');
+
+    document.querySelector('#cont').onmousemove = function(event) {
+        var moveX = event.clientX - this.offsetLeft;
+        moveSlider(event, 'type', 1, moveX);
+        moveSlider(event, 'company', 1, moveX);
+    }
+
+    function moveSlider(event, sliderId, multiplier, moveX) {
         sliderId = document.getElementById(sliderId);
+        var sliderWidth = sliderId.offsetWidth;
+        var container = document.querySelector('.desc__tags');
+        var containerWidth = container.offsetWidth;
+        var mouseMove = (moveX / containerWidth) * 100;
+        var sliderOffset = ((sliderWidth - containerWidth) / 100)* mouseMove;
         if(document.body.clientWidth >= 1140 && sliderId) {
-            sliderId.style.marginLeft = '-' + coordsX / multiplier + 'px';
+            sliderId.style.marginLeft = '-' + sliderOffset + 'px';
         }
     }
 
@@ -87,12 +112,6 @@ $(function() {
             removeChildrens();
             cursorId.classList.remove('cursor_active');
         });
-    }
-
-    document.onmousemove = function(event) {
-        getCursorPosition(event);
-        moveSlider(event, 'type', 2);
-        moveSlider(event, 'company', 1);
     }
 
     $(".block").mousemove(function(event) {
@@ -116,5 +135,7 @@ $(function() {
         });
     });
 
-
+    document.onmousemove = function(event) {
+        getCursorPosition(event);
+    }
 })
