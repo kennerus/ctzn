@@ -77,12 +77,6 @@ setInterval(function() {
     }
 }, 5);
 
-function getButtonPos() {
-    var hideText = $('.js_hideText');
-    var hideTextPos = (($(window).width() - 1440) / 2) + 'px';
-    hideText.css('right', hideTextPos);
-}
-
 function hasScrolled() {
     var st = $(this).scrollTop();
     
@@ -109,45 +103,89 @@ function hasScrolled() {
     else {
     	$('.js_header').removeClass('header_border');
     }
-
-    
     
     lastScrollTop = st;
 }
+// function getButtonPos() {
+//     var hideText = $('.js_hideText');
+//     var hideTextPos = (($(window).width() - 1440) / 2) + 'px';
+//     hideText.css('right', hideTextPos);
+// }
+
+// if($(window).width() < 1140) {
+//     var blockContainer = $('.block__container');
+//     blockContainer.each(function() {
+//         var blockContainerParent = $(this).parents('.container_row');
+//         $(this).find('.block').clone(blockContainerParent);
+//     });
+// }
 
 $(window).scroll(function(event){
     didScroll = true;
 
     if($('.js_hideText').length > 0 && $('.js_hideText').hasClass('js_activeFlex')) {
         var btnClose = $('.js_hideText');
-        var mainPos = $('.main__picture').offset();
+        var main = $('.main__picture');
+        var mainPos = main.offset();
         var btnCloseOffset = btnClose.offset();
         var btnCloseBot = btnCloseOffset.top + btnClose.height();
-        
-        if (mainPos.top <= btnCloseBot) {
-            btnClose.css({
-                position: 'absolute',
-                top: (mainPos.top - 188) + 'px'
-            });
-        }
-        else if ($('.js_header').hasClass('header__nav-up')) {
-            $('.js_hideText').css('top', '10px');
+
+        // var top = $(document).scrollTop(),
+        //     pip = mainPos.top,
+        //     height = btnClose.height();
+        // if (top > btnCloseBot && top < pip - height) {
+        //   btnClose.addClass('close-text_fixed').removeAttr("style");
+        //   }
+        // else if (top > pip - height) {
+        //   btnClose.removeClass('close-text_fixed').css({
+        //       'position':'absolute',
+        //       'bottom':'0'
+        //   });
+        // }
+        //   else {
+        //     btnClose.removeClass('close-text_fixed');
+        //  }
+
+        // if (mainPos.top - $(this).scrollTop() > 144) {
+        //     if($(window).width() > 1440) {
+        //         getButtonPos();
+        //         btnClose.css({
+        //             position: 'fixed',
+        //             top: '144px'
+        //         })
+        //     }
+        //     if($(window).width() < 1440) {
+        //         btnClose.css({
+        //             position: 'fixed',
+        //             top: '60px'
+        //         })
+        //     }
+        // }
+        // else if (mainPos.top - 50 <= btnCloseBot) {
+        //     btnClose.css({
+        //         position: 'absolute',
+        //         top: (mainPos.top - 238) + 'px',
+        //         right: 0
+        //     });
+        // }
+        // if ($('.js_header').hasClass('header__nav-up') && mainPos.top - $(this).scrollTop() > 144) {
+        //     $('.js_hideText').css({
+        //         top: '10px'
+        //     });
+        // }
+        var scrolledFromTop = $(this).scrollTop();
+        if($(this).scrollTop() < (mainPos.top - 225)) {
+            if($('.header').hasClass('header__nav-up')) {
+                btnClose.css('top', (scrolledFromTop - 100) + 'px');
+            }
+            else {
+                btnClose.css('top', scrolledFromTop + 'px');
+            }
         }
         else {
-            if($(window).width() > 1440) {
-                getButtonPos();
-                btnClose.css({
-                    position: 'fixed',
-                    top: '144px'
-                })
-            }
-            if($(window).width() < 1440) {
-                btnClose.css({
-                    position: 'fixed',
-                    top: '60px'
-                })
-            }
+            btnClose.css('top', (mainPos.top - 225) + 'px')
         }
+
         
     }
 });

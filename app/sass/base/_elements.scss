@@ -152,24 +152,32 @@ figcaption {
 }
 
 .close-text {
-	position: fixed;
-	top: 144px;
+	position: absolute;
 	right: 0;
-	z-index: 5;
+	z-index: 2;
 	display: none;
-	padding: 10px;
+	width: 52px;
+	height: 52px;
+	padding: 17px;
 	background-color: white;
 	border: none;
 	border-radius: 50%;
 	cursor: pointer;
-	transition: all 0.2s;
+	/*transition: all 0.01s;*/
 
 	@include breakpoint(max-width 790px) {
 		top: 60px;
 		right: 0;
 	}
-}
 
+	&_fixed {
+		position: fixed;
+		top: 140px;
+	}
+}
+.button-container {
+	height: 52px;
+}
 .hidden,
 .hidden_flex {
 	max-height: 0;
@@ -216,7 +224,7 @@ figcaption {
 
 	&__eye {
 		position: relative;
-		display: inline-block;
+		display: none;
 		width: 12px;
 		height: 12px;
 		margin-right: 5px;

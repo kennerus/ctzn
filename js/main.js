@@ -1,7 +1,7 @@
 $(function() {
     var block = document.querySelectorAll('.js_block');
     var cursorId = document.getElementById('cursor');
-
+    var cursorType = 'point';
 
 	if ($(window).width() < 1140) {
 		$('.js_tagsSlider').slick({
@@ -13,53 +13,29 @@ $(function() {
 	}
 
     // set our custom cursor position
-    function setDefaultCursor(coordX, coordY) {
+    function setDefaultCursor(coordX, coordY, cursor) {
         if($(window).width() > 1140) {
             cursorId.style.top = coordY + 'px';
             cursorId.style.left = coordX + 'px';
         }
+        if(cursor === 'eye') {
+            $('.cursor').addClass('cursor_active');
+            $('.cursor__eye').css('display', 'block');
+            $('.cursor__text').css('display', 'block');
+        }
+        else {
+            $('.cursor__eye').css('display', 'none');
+            $('.cursor__text').css('display', 'none');
+            $('.cursor').removeClass('cursor_active');
+        }
     }
 
-
     // get current cursor position
-    function getCursorPosition(event){
+    function getCursorPosition(event) {
         xMousePos = event.pageX;
         yMousePos = event.pageY - $(document).scrollTop();
         // window.status = "x = " + xMousePos + " y = " + yMousePos;
-        setDefaultCursor(xMousePos, yMousePos);
-        return xMousePos, yMousePos;
-    }
-
-    function appendEyes() {
-        var eye = document.querySelector('.cursor__eye');
-        if(eye == undefined) {
-            var eye = document.createElement('div');
-            eye.className = 'cursor__eye';
-            eye.innerHTML = '<span class="cursor__pupil"></span>';
-            cursorId.appendChild(eye);
-            var eye2 = eye.cloneNode(true);
-            cursorId.appendChild(eye2);
-        }
-    }
-
-    function getReadTime(_this) {
-        var readTime = _this.getAttribute('data-time');
-        var cursorText = document.querySelector('.cursor__text');
-        if(cursorText == undefined) {
-            var readTimeSpan = document.createElement('span');
-            readTimeSpan.className = 'cursor__text';
-            readTimeSpan.innerHTML = readTime + ' мин.';
-            cursorId.appendChild(readTimeSpan);
-        }
-    }
-
-    function removeChildrens() {
-        var eyes = document.querySelectorAll('.cursor__eye');
-        var readTime = document.querySelector('.cursor__text');
-        cursorId.removeChild(readTime);
-        for (var j = 0; j < eyes.length; j++) {
-            cursorId.removeChild(eyes[j]);
-        }
+        setDefaultCursor(xMousePos, yMousePos, cursorType);
     }
 
     function moveEyes(event, _this) {
@@ -78,13 +54,17 @@ $(function() {
         return blocksWidth;
     }
 
-    calculateWidth('type', 'div');
-    calculateWidth('company', 'div');
+    if($(window).width() > 1140) {
+        calculateWidth('type', 'div');
+        calculateWidth('company', 'div');
+    }
 
     document.querySelector('#cont').onmousemove = function(event) {
-        var moveX = event.clientX - this.offsetLeft;
-        moveSlider(event, 'type', 1, moveX);
-        moveSlider(event, 'company', 1, moveX);
+        if($(window).width() > 1140) {
+            var moveX = event.clientX - this.offsetLeft;
+            moveSlider(event, 'type', 1, moveX);
+            moveSlider(event, 'company', 1, moveX);
+        }
     }
 
     function moveSlider(event, sliderId, multiplier, moveX) {
@@ -93,28 +73,43 @@ $(function() {
         var container = document.querySelector('.desc__tags');
         var containerWidth = container.offsetWidth;
         var mouseMove = (moveX / containerWidth) * 100;
-        var sliderOffset = ((sliderWidth - containerWidth) / 100)* mouseMove;
+        var sliderOffset = ((sliderWidth - containerWidth) / 100) * mouseMove;
         if(document.body.clientWidth >= 1140 && sliderId) {
             sliderId.style.marginLeft = '-' + sliderOffset + 'px';
         }
     }
 
-    for (var i = 0; i < block.length; i++) {
-        block[i].addEventListener('mouseenter', function(event) {
-            cursorId.classList.add('cursor_active');
-            appendEyes();
-            getReadTime(this);
-            var blockPosition = this.getBoundingClientRect();
-            return blockPosition.left, blockPosition.top;
-        });
+    $('.js_block').on('mouseenter', function (event) {
+        cursorType = 'eye';
+        $('.cursor').css('transition', '0.1s');
+        $('body').attr('data-time', $(this).attr('data-time'));
+        var dataTime = $('body').attr('data-time');
+        $('.cursor__text').html(dataTime + ' мин.');
 
-        block[i].addEventListener('mouseleave', function (event) {
-            removeChildrens();
-            cursorId.classList.remove('cursor_active');
-        });
-    }
+        setTimeout(
+            function() {
+                $('.cursor').css('transition', 'none');
+            },
+        100)
+    });
 
-    $(".block").mousemove(function(event) {
+    $('.js_block').on('mouseleave', function(event) {
+        if (event.relatedTarget == $('.cursor_active')[0]) {
+            cursorType = 'eye';
+        }
+        else {
+            cursorType = 'point';
+            $('.cursor').css('transition', '0.1s');
+
+            setTimeout(
+                function() {
+                    $('.cursor').css('transition', 'none');
+                    },
+                100)
+        }
+    });
+
+    $(".js_block").mousemove(function(event) {
         var eye = $(".cursor__eye");
         var title = $(this).find('h2 span');
         if (eye.length > 0) {

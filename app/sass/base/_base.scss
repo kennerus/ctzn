@@ -15,9 +15,7 @@ body {
     font-weight: 300;
     font-stretch: normal;
 
-    @include breakpoint(max-width 790px) {
-        cursor: default;
-    }
+    
 }
 
 .body__custom-cursor {
@@ -25,6 +23,12 @@ body {
 
     p, h1, h2, h3, button, span, figure, picture, img, section, a, input, textarea  {
         cursor: none;
+        @include breakpoint(max-width 1440px) {
+            cursor: auto;
+        }
+    }
+    @include breakpoint(max-width 1440px) {
+        cursor: auto;
     }
 }
 
