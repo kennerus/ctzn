@@ -191,7 +191,19 @@
 
 .block {
 	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	width: 100%;
+
+	@include breakpoint(max-width 1140px) {
+		width: 300px;
+	}
+
+	div {
+		align-self: flex-start;
+	}
 	
 	&_a {
 		grid-column: 1 / span 1;
@@ -233,10 +245,39 @@
 		/*height: 280px;*/
 		/*object-fit: contain;*/
 
+		@include breakpoint(max-width 1440px) {
+			width: 300px;
+			height: 210px;
+		}
+	}
+
+	&_adaptive {
+		@include breakpoint(max-width 1440px) {
+			margin-top: 50px;
+			margin-right: 50px;
+
+			&:nth-child(2n) {
+				margin-right: 0;
+			}
+		}
+		@include breakpoint(max-width 1140px) {
+			width: 300px;
+			margin-top: 50px;
+			margin-right: 50px;
+
+			&:nth-child(2n) {
+				margin-right: 0;
+			}
+		}
 		
+		@include breakpoint(max-width 790px) {
+			width: 100%;
+			margin-right: 0;
+		}
 	}
 
 	&_biggest {
+		width: 100%;
 		margin-top: 50px;
 
 		img {
@@ -245,7 +286,7 @@
 
 			@include breakpoint(max-width 1440px) {
 				width: 1000px;
-				height: 460px;
+				height: 462px;
 			}
 
 			@include breakpoint(max-width 1140px) {
@@ -277,7 +318,7 @@
 
 			@include breakpoint(max-width 1440px) {
 				width: 650px;
-				height: 530px;
+				height: 531px;
 			}
 
 			@include breakpoint(max-width 1140px) {
@@ -289,34 +330,6 @@
 				width: 280px;
 				height: 196px;
 			}
-		}
-	}
-
-	&_adaptive {
-		@include breakpoint(max-width 1440px) {
-			margin-top: 50px;
-			margin-right: 50px;
-
-			&:nth-child(2n) {
-				margin-right: 0;
-			}
-		}
-		@include breakpoint(max-width 1140px) {
-			width: 300px !important;
-			margin-top: 50px;
-			margin-right: 50px;
-
-			&:nth-child(2n) {
-				margin-right: 0;
-			}
-		}
-		
-		@include breakpoint(max-width 790px) {
-			width: 100% !important;
-			/*margin-right: 1%;*/
-		}
-		@include breakpoint(max-width 320px) {
-			margin-right: 0;
 		}
 	}
 
@@ -335,8 +348,6 @@
 			width: 100%;
 		}
 	}
-
-	
 
 	h2 {
 		font-size: 20px;
@@ -363,14 +374,6 @@
 			@include linkHover(black);
 		}
 	}
-
-	@include breakpoint(max-width 1140px) {
-		width: 300px !important;
-	}
-
-	@include breakpoint(max-width 790px) {
-		width: 280px !important;
-	}
 }
 
 .biggest__title {
@@ -383,6 +386,7 @@
 			@include linkHover(white);
 
 			@include breakpoint(max-width 790px) {
+				font-size: 18px;
 				color: black;
 				@include linkHover(black);
 			}
@@ -399,6 +403,7 @@
 			@include linkHover(white);
 
 			@include breakpoint(max-width 790px) {
+				font-size: 14px;
 				color: black;
 				@include linkHover(black);
 			}
@@ -414,7 +419,7 @@
 	justify-items: start;
 	align-items: center;
 	grid-column-gap: 100px;
-	min-height: 300px;
+	min-height: 280px;
 	padding: 30px;
 	color: white;
 	box-sizing: border-box;
@@ -633,7 +638,8 @@
 		}
 
 		@include breakpoint(max-width 1140px) {
-			max-width: 100%;
+			max-width: 475px;
+			min-width: 300px;
 		}
 	}
 
@@ -643,6 +649,11 @@
 
 		h2 {
 			font-size: 300px;
+		}
+
+		@include breakpoint(max-width 1140px) {
+			max-width: 475px;
+			min-width: 300px;
 		}
 	}
 
@@ -664,6 +675,11 @@
 			@include breakpoint(max-width 1440px) {
 				margin-top: 30px;
 			}
+		}
+
+		@include breakpoint(max-width 1140px) {
+			max-width: 475px;
+			min-width: 300px;
 		}
 	}
 
@@ -768,13 +784,14 @@
 		flex-direction: column;
 		align-items: flex-start;
 		/*width: calc(50% - 25px);*/
-		width: 300px;
-		height: 280px;
-		min-height: 280px;
+		max-width: 475px;
+		min-width: 300px;
+		height: auto;
+		min-height: inherit;
 		padding: 30px;
 	}
 
-	@include breakpoint(max-width 790px) {
+	@include breakpoint(max-width 600px) {
 		width: 280px;
 		min-height: inherit;
 	}
