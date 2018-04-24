@@ -3,14 +3,14 @@ $(function() {
     var cursorId = document.getElementById('cursor');
     var cursorType = 'point';
 
-	if ($(window).width() < 1140) {
-		$('.js_tagsSlider').slick({
-			infinite: false,
-			variableWidth: true,
-			swipeToSlide: true,
-			arrows: false
-		})
-	}
+	// if ($(window).width() < 1140) {
+	// 	$('.js_tagsSlider').slick({
+	// 		infinite: false,
+	// 		variableWidth: true,
+	// 		swipeToSlide: true,
+	// 		arrows: false
+	// 	})
+	// }
 
     // set our custom cursor position
     function setDefaultCursor(coordX, coordY, cursor) {

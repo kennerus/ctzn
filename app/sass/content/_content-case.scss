@@ -10,27 +10,6 @@
 	}
 }
 
-.xs__img {
-	img {
-		height: 280px;
-
-		@include breakpoint(max-width 790px) {
-			height: 360px;
-		}
-	}
-}
-
-.l__img {
-	img {
-		height: 670px;
-	}
-}
-
-.xl__img {
-	img {
-		height: 600px;
-	}
-}
 
 .xs__img,
 .sm__img,
@@ -39,11 +18,7 @@
 .xl__img {
 	img {
 		width: 100%;
-		object-fit: contain;
 
-		@include breakpoint(max-width 1140px) {
-			height: auto;
-		}
 	}
 }
 

@@ -65,6 +65,7 @@
 }
 
 .case-block {
+
     &__sm {
         width: 30.77% !important;
         transition: all 0.2s linear;
@@ -76,6 +77,10 @@
 
         @include breakpoint(max-width 790px) {
             margin-top: 30px;
+        }
+
+        img {
+            width: 100%;
         }
 
         &_tablet {
@@ -113,6 +118,10 @@
         width: 48.08% !important;
         transition: all 0.2s linear;
 
+        img {
+            width: 100%;
+        }
+
         @include breakpoint(max-width 1140px) {
             width: 100% !important;
             margin-top: 50px;
@@ -127,6 +136,10 @@
         width: 65.385% !important;
         transition: all 0.2s linear;
 
+        img {
+            width: 100%;
+        }
+
         @include breakpoint(max-width 1140px) {
             width: 100% !important;
             margin-top: 50px;
@@ -140,6 +153,10 @@
     &__xl {
         width: 100% !important;
         transition: all 0.2s linear;
+
+        img {
+            width: 100%;
+        }
 
         @include breakpoint(max-width 790px) {
             margin-top: 30px;

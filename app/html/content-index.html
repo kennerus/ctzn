@@ -198,7 +198,11 @@
 
         <div class="block block_adaptive block_big block_d js_block" data-time="10">
           <a href="#">
-            <img src="img/main/desk/call.jpg" alt="">
+            <picture>
+              <source media="(min-width: 1140px)" srcset="img/main/desk/call.jpg 2x">
+              <source media="(max-width: 1140px)" srcset="img/main/tablet/svyas.jpg 2x">
+              <img src="img/main/desk/call.jpg" alt="">
+            </picture>
           </a>
 
           <div>
@@ -263,7 +267,7 @@
         </div>
 
         <div
-            class="text-block text-block_black-text text-block_yellow text-block_black-yellow block_adaptive text-block_big text-block_b">
+            class="text-block text-block_short-desc text-block_black-text text-block_yellow text-block_black-yellow block_adaptive text-block_big text-block_b">
           <div>
             <a href="#"></a>
           </div>
@@ -311,7 +315,7 @@
 
 
       <div class="main__grid-second">
-        <div class="text-block block_adaptive text-block_purple text-block_biggest text-block_d">
+        <div class="text-block text-block_short-desc block_adaptive text-block_purple text-block_biggest text-block_d">
           <div>
             <a href="#"></a>
           </div>

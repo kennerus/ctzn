@@ -152,8 +152,8 @@ figcaption {
 }
 
 .close-text {
-	position: absolute;
-	right: 0;
+	position: fixed;
+	top: 144px;
 	z-index: 2;
 	display: none;
 	width: 52px;
@@ -163,19 +163,17 @@ figcaption {
 	border: none;
 	border-radius: 50%;
 	cursor: pointer;
-	/*transition: all 0.01s;*/
 
 	@include breakpoint(max-width 790px) {
 		top: 60px;
 		right: 0;
 	}
-
-	&_fixed {
-		position: fixed;
-		top: 140px;
-	}
 }
+
 .button-container {
+	position: absolute;
+	right: 0;
+	width: 52px;
 	height: 52px;
 }
 .hidden,

@@ -5,9 +5,7 @@ $(function() {
 		$('.js_hideText').css('display', 'flex');
 		$(this).hide(0).addClass('hidden_flex');
 		$('.js_container').addClass('container_row').removeClass('container_wrap');
-		if($(window).width() > 1440) {
-			getButtonPos();
-		}
+
 	});
 
 	$(document).on('click', '.js_hideText', function() {
@@ -16,11 +14,5 @@ $(function() {
 		$('.js_activeText').css('max-height', '0').removeClass('js_activeText').addClass('hidden');
 		$('.js_activeFlex').css('max-height', '0').removeClass('js_activeFlex').addClass('hidden_flex');
 		$('.js_container').removeClass('container_row').addClass('container_wrap');
-	});
-	
-	$(window).resize(function(event) {
-		if($(window).width() > 1440) {
-			getButtonPos();
-		}
 	});
 })
