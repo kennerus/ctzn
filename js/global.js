@@ -63,7 +63,7 @@ $(function() {
     $(document).on('mouseleave', '.js_cursorPointer', function() {
         $(this).css('cursor', 'none');
         $(this).find('*').css('cursor', 'none');
-        $('#cursor').css('display', 'block');
+        $('#cursor').css('display', 'flex');
     })
 })
 
@@ -103,22 +103,16 @@ function hasScrolled() {
             $('.js_header').removeClass('header__nav-up');
         }
     }
+
+    if($(window).scrollTop() > delta) {
+        $('.js_header').addClass('header_border');
+    }
+    else {
+        $('.js_header').removeClass('header_border');
+    }
     
     lastScrollTop = st;
 }
-// function getButtonPos() {
-//     var hideText = $('.js_hideText');
-//     var hideTextPos = (($(window).width() - 1440) / 2) + 'px';
-//     hideText.css('right', hideTextPos);
-// }
-
-// if($(window).width() < 1140) {
-//     var blockContainer = $('.block__container');
-//     blockContainer.each(function() {
-//         var blockContainerParent = $(this).parents('.container_row');
-//         $(this).find('.block').clone(blockContainerParent);
-//     });
-// }
 
 $(window).scroll(function(event){
     didScroll = true;
@@ -129,31 +123,62 @@ $(window).scroll(function(event){
         var mainPos = main.offset();
         var btnCloseOffset = btnClose.offset();
         var btnCloseBot = btnCloseOffset.top + btnClose.height();
-
-        if (mainPos.top - $(this).scrollTop() > 235) {
-            if($(window).width() > 1440) {
+        //положение крестика при скролле
+        if($(window).width() > 1140) {
+            if (mainPos.top - $(this).scrollTop() > 100 && $(this).scrollTop() > 125) {
                 btnClose.css({
-                    top: '144px',
+                    top: '10px',
                     position: 'fixed',
                 })
             }
-            if($(window).width() < 1440) {
+            else if (mainPos.top - 100 <= btnCloseBot) {
                 btnClose.css({
-                    top: '60px',
-                    position: 'fixed',
-                })
+                    position: 'absolute',
+                    top: (mainPos.top - 235) + 'px'
+                });
             }
         }
-        else if (mainPos.top - 50 <= btnCloseBot) {
-            btnClose.css({
+        if($(window).width() <= 1140) {
+            if (mainPos.top - $(this).scrollTop() > 100 && $(this).scrollTop() > 80) {
+                btnClose.css({
+                    top: '10px',
+                    position: 'fixed',
+                })
+            }
+            else if (mainPos.top - 100 <= btnCloseBot) {
+                btnClose.css({
+                    position: 'absolute',
+                    top: (mainPos.top - 175) + 'px'
+                });
+            }
+        }
+        //положение крестика когда доскроллил до верха
+        if ($(this).scrollTop() < 125 && $(window).width() > 1140) {
+             $('.js_hideText').css({
                 position: 'absolute',
-                top: (mainPos.top - 235) + 'px'
+                top: 'auto'
             });
         }
-        if ($('.js_header').hasClass('header__nav-up') && mainPos.top - $(this).scrollTop() > 235) {
-            $('.js_hideText').css({
-                top: '10px'
+        if ($(this).scrollTop() < 80 && $(window).width() <= 1140) {
+             $('.js_hideText').css({
+                position: 'absolute',
+                top: 'auto'
             });
         }
+
     }
 });
+
+$(function() {
+    var block = $('.js_removeTablet .block');
+    var main =  $('.main');
+    if ($(window).width() <= 1140) {
+        main.append('<div class="container container_tablet"></div>');
+
+        block.each(function() {
+            $(this).appendTo('.container_tablet');
+        });
+
+        $('.js_removeTablet').remove();
+    }
+})

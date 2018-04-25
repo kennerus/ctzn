@@ -1,7 +1,6 @@
 @mixin linkHover($color) {
 	&:hover, &:active, &:focus {
 		color: $color;
-		text-decoration: underline;
 	}
 }
 
@@ -82,7 +81,6 @@
 }
 
 .title__m h2 {
-	margin-bottom: 20px;
 	font-size: 34px;
 	font-weight: 500;
 	line-height: 1.24;
@@ -96,6 +94,7 @@
 }
 
 .text__m p {
+	margin-top: 20px;
 	font-size: 22px;
 	line-height: 1.64;
 	letter-spacing: -0.2px;
@@ -107,7 +106,6 @@
 }
 
 .title__sm h3 {
-	margin-bottom: 10px;
 	font-size: 26px;
 	font-weight: 500;
 	line-height: 1.38;
@@ -120,6 +118,7 @@
 }
 
 .text__sm p {
+	margin-top: 10px;
 	font-size: 19px;
 	line-height: 1.68;
 
@@ -152,8 +151,8 @@ figcaption {
 }
 
 .close-text {
-	position: fixed;
-	top: 144px;
+	position: absolute;
+	top: auto;
 	z-index: 2;
 	display: none;
 	width: 52px;
@@ -163,11 +162,6 @@ figcaption {
 	border: none;
 	border-radius: 50%;
 	cursor: pointer;
-
-	@include breakpoint(max-width 790px) {
-		top: 60px;
-		right: 0;
-	}
 }
 
 .button-container {
@@ -253,7 +247,7 @@ figcaption {
 		border-radius: 10px;
 	}
 
-	@include breakpoint(max-width 1440px) {
+	@include breakpoint(max-width 1140px) {
 		display: none;
 	}
 }

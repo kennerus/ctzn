@@ -3,15 +3,6 @@ $(function() {
     var cursorId = document.getElementById('cursor');
     var cursorType = 'point';
 
-	// if ($(window).width() < 1140) {
-	// 	$('.js_tagsSlider').slick({
-	// 		infinite: false,
-	// 		variableWidth: true,
-	// 		swipeToSlide: true,
-	// 		arrows: false
-	// 	})
-	// }
-
     // set our custom cursor position
     function setDefaultCursor(coordX, coordY, cursor) {
         if($(window).width() > 1140) {
@@ -61,7 +52,7 @@ $(function() {
 
     document.querySelector('#cont').onmousemove = function(event) {
         if($(window).width() > 1140) {
-            var moveX = event.clientX - this.offsetLeft;
+            var moveX = event.clientX - this.getBoundingClientRect().left;
             moveSlider(event, 'type', 1, moveX);
             moveSlider(event, 'company', 1, moveX);
         }
@@ -79,23 +70,20 @@ $(function() {
         }
     }
 
-    $('.js_block').on('mouseenter', function (event) {
-        cursorType = 'eye';
-        $('.cursor').css('transition', '0.1s');
-        $('body').attr('data-time', $(this).attr('data-time'));
-        var dataTime = $('body').attr('data-time');
-        $('.cursor__text').html(dataTime + ' мин.');
-
-        setTimeout(
-            function() {
-                $('.cursor').css('transition', 'none');
-            },
-        100)
-    });
-
-    $('.js_block').on('mouseleave', function(event) {
-        if (event.relatedTarget == $('.cursor_active')[0]) {
+    $('.main').mousemove(function(event) {
+        var parent = event.target.offsetParent;
+        if (parent.classList.contains('js_block')) {
             cursorType = 'eye';
+            $('.cursor').css('transition', '0.1s');
+            $('body').attr('data-time', $(parent).attr('data-time'));
+            var dataTime = $('body').attr('data-time');
+            $('.cursor__text').html(dataTime + ' мин.');
+
+            setTimeout(
+                function() {
+                    $('.cursor').css('transition', 'none');
+                },
+            100)
         }
         else {
             cursorType = 'point';
@@ -104,10 +92,10 @@ $(function() {
             setTimeout(
                 function() {
                     $('.cursor').css('transition', 'none');
-                    },
-                100)
+                },
+            100)
         }
-    });
+    })
 
     $(".js_block").mousemove(function(event) {
         var eye = $(".cursor__eye");

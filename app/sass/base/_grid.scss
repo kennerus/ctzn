@@ -35,6 +35,12 @@
         }
     }
 
+    &_tablet {
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
     &_for-biggest {
         margin-top: 0;
     }

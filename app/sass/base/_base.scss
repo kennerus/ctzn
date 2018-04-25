@@ -19,15 +19,16 @@ body {
 }
 
 .body__custom-cursor {
-    cursor: none;
+    cursor: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7), auto;
 
     p, h1, h2, h3, button, span, figure, picture, img, section, a, input, textarea  {
-        cursor: none;
-        @include breakpoint(max-width 1440px) {
+        cursor: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7), auto;
+        
+        @include breakpoint(max-width 1140px) {
             cursor: auto;
         }
     }
-    @include breakpoint(max-width 1440px) {
+    @include breakpoint(max-width 1140px) {
         cursor: auto;
     }
 }
