@@ -72,7 +72,19 @@ $(function() {
 
     $('.main').mousemove(function(event) {
         var parent = event.target.offsetParent;
-        if (parent.classList.contains('js_block')) {
+        var title = event.target.offsetParent.offsetParent;
+        console.log(event);
+        if (title === null) {
+            cursorType = 'point';
+            $('.cursor').css('transition', '0.1s');
+
+            setTimeout(
+                function() {
+                    $('.cursor').css('transition', 'none');
+                },
+            100)
+        }
+        if (parent.classList.contains('js_block') || title.classList.contains('js_block')) {
             cursorType = 'eye';
             $('.cursor').css('transition', '0.1s');
             $('body').attr('data-time', $(parent).attr('data-time'));

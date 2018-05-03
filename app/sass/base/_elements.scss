@@ -189,8 +189,6 @@ figcaption {
 	cursor: pointer;
 
 	&:hover {
-		@include textShadow(white);
-		@include smallUnderlineCase(white, black);
 		opacity: 1;
 	}
 

@@ -367,6 +367,12 @@
 	}
 
 	&_big {
+		height: 100%;
+
+		@include breakpoint(max-width 1140px) {
+			height: auto;
+		}
+
 		&>a {
 			@include breakpoint(max-width 1440px) {
 				height: 100%;
@@ -499,12 +505,6 @@
 	color: white;
 	box-sizing: border-box;
 	overflow: hidden;
-
-	@include breakpoint(max-width 1440px) {
-		p {
-			max-width: 70%;
-		}
-	}
 
 	@include breakpoint(max-width 1140px) {
 		display: flex;
@@ -932,7 +932,7 @@
 	
 	@include breakpoint(max-width 1440px) {
 		p {
-			max-width: 70%;
+			max-width: 71%;
 		}
 	}
 
