@@ -10,13 +10,13 @@
 			width: 50%;
 		}
 
-		@include breakpoint(max-width 790px) {
+		@include breakpoint(max-width 750px) {
 			width: 100%;
 		}
 	}
 
 	&__address {
-		@include breakpoint(max-width 790px) {
+		@include breakpoint(max-width 750px) {
 			margin-top: 10px;
 		}
 	}

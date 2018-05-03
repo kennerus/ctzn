@@ -11,7 +11,7 @@
         justify-content: space-between;
         align-items: center;
 
-        @include breakpoint(max-width 790px) {
+        @include breakpoint(max-width 750px) {
             flex-wrap: wrap;
         }
     }
@@ -51,14 +51,14 @@
 }
 
 
-@media (max-width: 790px) {
+@media (max-width: 750px) {
     .container {
         width: 100%;
         padding: 0 20px;
     }
 }
 
-@media (min-width: 790px) {
+@media (min-width: 750px) {
     .container {
         width: 100%;
     }
@@ -71,7 +71,6 @@
 }
 
 .case-block {
-
     &__sm {
         width: 30.77% !important;
         transition: all 0.2s linear;
@@ -81,7 +80,7 @@
             margin-top: 50px;
         }
 
-        @include breakpoint(max-width 790px) {
+        @include breakpoint(max-width 750px) {
             margin-top: 30px;
         }
 
@@ -99,7 +98,7 @@
                 }
             }
 
-            @include breakpoint(max-width 790px) {
+            @include breakpoint(max-width 750px) {
                 width: 100% !important;
                 margin-top: 30px;
                 margin-right: 0;
@@ -133,7 +132,7 @@
             margin-top: 50px;
         }
 
-        @include breakpoint(max-width 790px) {
+        @include breakpoint(max-width 750px) {
             margin-top: 30px;
         }
     }
@@ -151,7 +150,7 @@
             margin-top: 50px;
         }
 
-        @include breakpoint(max-width 790px) {
+        @include breakpoint(max-width 750px) {
             margin-top: 30px;
         }
     }
@@ -164,7 +163,7 @@
             width: 100%;
         }
 
-        @include breakpoint(max-width 790px) {
+        @include breakpoint(max-width 750px) {
             margin-top: 30px;
         }
 

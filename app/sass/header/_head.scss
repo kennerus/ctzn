@@ -8,7 +8,7 @@
 	background-color: white;
 	transition: all 0.6s ease-in-out;
 
-	@include breakpoint(max-width 790px) {
+	@include breakpoint(max-width 750px) {
 		padding: 11px 0;
 	}
 
@@ -38,7 +38,7 @@
 		&-img {
 			height: 30px;
 
-			@include breakpoint(max-width 790px) {
+			@include breakpoint(max-width 750px) {
 				height: 20px;
 			}
 		}
@@ -52,7 +52,7 @@
 		display: flex;
 		align-items: center;
 
-		@include breakpoint(max-width 790px) {
+		@include breakpoint(max-width 750px) {
 			display: none;
 		}
 	}
@@ -104,7 +104,7 @@
 
 		}
 
-		@include breakpoint(max-width 790px) {
+		@include breakpoint(max-width 750px) {
 			margin-top: 40px;
 			margin-right: 0;
 
@@ -125,7 +125,7 @@
 		background-color: transparent;
 		border: none;
 
-		@include breakpoint(max-width 790px) {
+		@include breakpoint(max-width 750px) {
 			font-size: 20px;
 		}
 	}
@@ -138,7 +138,7 @@
 		display: flex;
 		align-items: center;
 
-		@include breakpoint(max-width 790px) {
+		@include breakpoint(max-width 750px) {
 			margin-right: 20px;
 			margin-left: auto;
 		}
@@ -151,7 +151,7 @@
 			margin-right: 30px;
 		}
 
-		@include breakpoint(max-width 790px) {
+		@include breakpoint(max-width 750px) {
 			display: none;
 		}
 	}
@@ -164,7 +164,7 @@
 			margin-right: 20px;
 		}
 
-		@include breakpoint(max-width 790px) {
+		@include breakpoint(max-width 750px) {
 			margin-right: 0;
 			font-size: 16px;
 		}
@@ -178,7 +178,7 @@
 		position: relative;
 		display: none;
 
-		@include breakpoint(max-width 790px) {
+		@include breakpoint(max-width 750px) {
 			display: block;
 			width: 25px;
 			height: 25px;

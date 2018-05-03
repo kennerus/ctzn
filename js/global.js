@@ -39,14 +39,14 @@ $(function() {
     });
 
     // text truncate
-    if ($(window).width() < 1440 && $(window).width() > 790) {
+    if ($(window).width() < 1440 && $(window).width() > 750) {
         $('.text-block p').dotdotdot({
             ellipsis: "\u2026 ",
             height: 140
        });
     }
 
-    if ($(window).width() < 790) {
+    if ($(window).width() < 750) {
         $('.text-block p').dotdotdot({
             ellipsis: "\u2026 ",
             height: 100

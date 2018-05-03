@@ -5,11 +5,11 @@
 		padding-top: 80px;
 	}
 
-	@include breakpoint(max-width 790px) {
+	@include breakpoint(max-width 750px) {
 		padding-top: 0;
 	}
 
-	h1 {
+/*	h1 {
 		font-size: 40px;
 		font-weight: 500;
 		line-height: 1.5;
@@ -20,12 +20,12 @@
 			line-height: 1.88;
 		}
 
-		@include breakpoint(max-width 790px) {
+		@include breakpoint(max-width 750px) {
 			font-size: 24px;
 			line-height: 1.42;
 			letter-spacing: -0.1px;
 		}
-	}
+	}*/
 
 	&__head {
 		text-align: center;
@@ -45,7 +45,7 @@
 			font-size: 19px;
 		}
 
-		@include breakpoint(max-width 790px) {
+		@include breakpoint(max-width 750px) {
 			width: 100%;
 			margin-top: 10px;
 			font-size: 14px;
@@ -61,7 +61,7 @@
 
 		&-slider {
 			display: flex;
-			align-items: center;
+			align-items: flex-start;
 			margin: 0 auto;
 			margin-top: 40px;
 			padding: 0 70px;
@@ -73,7 +73,7 @@
 				overflow-x: auto;
 			}
 
-			@include breakpoint(max-width 790px) {
+			@include breakpoint(max-width 750px) {
 				margin-top: 25px;
 			}
 
@@ -99,7 +99,7 @@
 						margin-right: 70px;
 					}
 
-					@include breakpoint(max-width 790px) {
+					@include breakpoint(max-width 750px) {
 						margin-right: 20px;
 					}
 				}
@@ -111,7 +111,7 @@
 						margin-left: 50px;
 					}
 
-					@include breakpoint(max-width 790px) {
+					@include breakpoint(max-width 750px) {
 						margin-left: 0;
 					}
 				}
@@ -123,7 +123,7 @@
 					margin-right: 0;
 				}
 
-				@include breakpoint(max-width 790px) {
+				@include breakpoint(max-width 750px) {
 					margin-right: 10px;
 				}
 			}
@@ -138,13 +138,13 @@
 				border: solid 1px rgba(7, 7, 7, 0.2);
 				opacity: 0.8;
 
-				&:hover {
+/*				&:hover {
 					color: white;
 					background-color: black;
 					opacity: 1;
-				}
+				}*/
 
-				@include breakpoint(max-width 790px) {
+				@include breakpoint(max-width 750px) {
 					margin-right: 10px;
 					padding: 5px 10px;
 					font-size: 14px;
@@ -152,7 +152,7 @@
 			}		
 		}
 
-		@include breakpoint(max-width 790px) {
+		@include breakpoint(max-width 750px) {
 			margin: 0 -20px;
 			padding-top: 40px;
 
@@ -180,7 +180,7 @@
 			width: 55px;
 		}
 
-		@include breakpoint(max-width 790px) {
+		@include breakpoint(max-width 750px) {
 			width: 20px
 		}
 	}
@@ -200,7 +200,7 @@
 			padding-top: 50px;
 		}
 
-		@include breakpoint(max-width 790px) {
+		@include breakpoint(max-width 750px) {
 			padding-top: 27px;
 		}
 	}
@@ -225,7 +225,7 @@
 			margin-top: 0;
 		}
 
-		@include breakpoint(max-width 790px) {
+		@include breakpoint(max-width 750px) {
 			flex-direction: column;
 			align-items: center;
 		}
@@ -252,7 +252,7 @@
 		width: calc(50% - 25px);
 	}
 
-	@include breakpoint(max-width 790px) {
+	@include breakpoint(max-width 750px) {
 		width: 100%;
 	}
 
@@ -312,16 +312,18 @@
 
 	img {
 		width: 100%;
+
+		@include breakpoint(max-width 1440px) {
+			height: 100%;
+		}
+
+		@include breakpoint(max-width 1140px) {
+			height: auto;
+		}
 	}
 
 	&_adaptive {
-		/*@include breakpoint(max-width 1440px) {
-			margin-top: 50px;
-			margin-right: 0;
-
-		}*/
 		@include breakpoint(max-width 1140px) {
-			/*width: 300px;*/
 			margin-top: 50px;
 			margin-right: 50px;
 
@@ -330,8 +332,7 @@
 			}
 		}
 		
-		@include breakpoint(max-width 790px) {
-			/*width: 280px;*/
+		@include breakpoint(max-width 750px) {
 			margin-right: 0;
 		}
 	}
@@ -340,7 +341,7 @@
 		width: 100%;
 		margin-top: 50px;
 
-		@include breakpoint(max-width 790px) {
+		@include breakpoint(max-width 750px) {
 			margin: 0 auto;
 			margin-top: 50px;
 		}
@@ -354,7 +355,7 @@
 			bottom: 40px;
 			left: 40px;
 
-			@include breakpoint(max-width 790px) {
+			@include breakpoint(max-width 750px) {
 				position: static;
 			}
 		}
@@ -380,8 +381,12 @@
 		}
 		
 		img {
-			height: 100%;
+			/*height: 100%;*/
 			object-fit: cover;
+
+			@include breakpoint(max-width 1440px) {
+				height: 100%;
+			}
 
 			@include breakpoint(max-width 1140px) {
 				height: auto;
@@ -460,7 +465,7 @@
 			color: white;
 			@include linkHover(white);
 
-			@include breakpoint(max-width 790px) {
+			@include breakpoint(max-width 750px) {
 				font-size: 18px;
 				color: black;
 				@include linkHover(black);
@@ -478,7 +483,7 @@
 			color: white;
 			@include linkHover(white);
 
-			@include breakpoint(max-width 790px) {
+			@include breakpoint(max-width 750px) {
 				font-size: 14px;
 				color: black;
 				@include linkHover(black);
@@ -518,7 +523,7 @@
 		padding: 30px;
 	}
 
-	@include breakpoint(max-width 790px) {
+	@include breakpoint(max-width 750px) {
 		min-width: 280px;
 		width: 100%;
 		max-width: 100%;
@@ -745,7 +750,7 @@
 			min-width: 300px;
 		}
 
-		@include breakpoint(max-width 790px) {
+		@include breakpoint(max-width 750px) {
 			min-width: 280px;
 			width: 100%;
 			max-width: 100%;
@@ -769,7 +774,7 @@
 			min-width: 300px;
 		}
 
-		@include breakpoint(max-width 790px) {
+		@include breakpoint(max-width 750px) {
 			min-width: 280px;
 			width: 100%;
 			max-width: 100%;
@@ -805,7 +810,7 @@
 			min-width: 300px;
 		}
 
-		@include breakpoint(max-width 790px) {
+		@include breakpoint(max-width 750px) {
 			min-width: 280px;
 			width: 100%;
 			max-width: 100%;
@@ -925,7 +930,7 @@
 			border-radius: 50%;
 		}
 
-		@include breakpoint(max-width 790px) {
+		@include breakpoint(max-width 750px) {
 			font-size: 14px;
 		}
 	}
@@ -948,7 +953,7 @@
 		padding: 30px;
 	}
 
-	@include breakpoint(max-width 790px) {
+	@include breakpoint(max-width 750px) {
 		min-width: 280px;
 		width: 100%;
 		max-width: 100%;
@@ -969,7 +974,7 @@
 		padding: 0 70px;
 	}
 
-	@include breakpoint(max-width 790px) {
+	@include breakpoint(max-width 750px) {
 		padding: 0 20px;
 	}
 }

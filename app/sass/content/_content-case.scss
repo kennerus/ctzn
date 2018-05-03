@@ -10,7 +10,6 @@
 	}
 }
 
-
 .xs__img,
 .sm__img,
 .m__img,
@@ -18,11 +17,8 @@
 .xl__img {
 	img {
 		width: 100%;
-
 	}
 }
-
-
 
 .main__nav {
 	display: flex;
@@ -82,7 +78,7 @@ figure > div {
 			}
 		}
 
-		@include breakpoint(max-width 790px) {
+		@include breakpoint(max-width 750px) {
 			width: 100%;
 			margin-top: 30px;
 			margin-right: 0;

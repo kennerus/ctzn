@@ -15,7 +15,10 @@ $(function() {
             $('.cursor__text').css('display', 'block');
         }
         else {
-            $('.cursor__eye').css('display', 'none');
+            $('.cursor__eye').css({
+                display: 'none',
+                transform: '0'
+            });
             $('.cursor__text').css('display', 'none');
             $('.cursor').removeClass('cursor_active');
         }
@@ -58,6 +61,34 @@ $(function() {
         }
     }
 
+    $('.desc__tags a').hover(
+        function(event) {
+            $(this).css({
+                color: '#fff',
+                backgroundColor: '#000',
+                opacity: '1'
+            })
+            
+        },
+        function(event) {
+            console.log('out');
+            console.log(event);
+            console.log($(this)[0])
+            $(this).css({
+                color: '#000',
+                backgroundColor: '#fff',
+                opacity: '0.8'
+            })
+            if (event.relatedTarget === $('.cursor')[0] && event.delegateTarget === $(this)[0]) {
+                $(this).css({
+                    color: '#fff',
+                    backgroundColor: '#000',
+                    opacity: '1'
+                })
+            }
+        }
+    )
+
     function moveSlider(event, sliderId, multiplier, moveX) {
         sliderId = document.getElementById(sliderId);
         var sliderWidth = sliderId.offsetWidth;
@@ -65,6 +96,7 @@ $(function() {
         var containerWidth = container.offsetWidth;
         var mouseMove = (moveX / containerWidth) * 100;
         var sliderOffset = ((sliderWidth - containerWidth) / 100) * mouseMove;
+
         if(document.body.clientWidth >= 1140 && sliderId) {
             sliderId.style.marginLeft = '-' + sliderOffset + 'px';
         }
@@ -73,7 +105,6 @@ $(function() {
     $('.main').mousemove(function(event) {
         var parent = event.target.offsetParent;
         var title = event.target.offsetParent.offsetParent;
-        console.log(event);
         if (title === null) {
             cursorType = 'point';
             $('.cursor').css('transition', '0.1s');
@@ -82,7 +113,7 @@ $(function() {
                 function() {
                     $('.cursor').css('transition', 'none');
                 },
-            100)
+                100)
         }
         if (parent.classList.contains('js_block') || title.classList.contains('js_block')) {
             cursorType = 'eye';
@@ -95,7 +126,7 @@ $(function() {
                 function() {
                     $('.cursor').css('transition', 'none');
                 },
-            100)
+                100)
         }
         else {
             cursorType = 'point';
@@ -105,10 +136,9 @@ $(function() {
                 function() {
                     $('.cursor').css('transition', 'none');
                 },
-            100)
+                100)
         }
     })
-
     $(".js_block").mousemove(function(event) {
         var eye = $(".cursor__eye");
         var title = $(this).find('h2 span');
@@ -129,6 +159,7 @@ $(function() {
           'transform': 'rotate(' + rot + 'deg)'
         });
     });
+
 
     document.onmousemove = function(event) {
         getCursorPosition(event);
