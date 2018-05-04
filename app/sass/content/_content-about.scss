@@ -1,0 +1,43 @@
+
+.active-item {
+	opacity: 0.5;
+}
+
+.author-cards {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 20px;
+	background-color: #f2f2f2;
+	box-sizing: border-box;
+	
+	&>a {
+		width: 100px !important;
+		height: 100px !important;
+		margin-right: 30px;
+		border-radius: 50%;
+		overflow: hidden;
+	}
+
+	img {
+		width: 100px !important;
+		height: 100px !important;
+	}
+
+	.author-name {
+		font-size: 22px;
+		font-weight: 500;
+		line-height: 1.64;
+	}
+
+	.author-post {
+		font-size: 15px;
+		line-height: 2.13;
+	}
+
+	.author-info {
+		align-self: center;
+		width: calc(100% - 130px);
+	}
+}
+

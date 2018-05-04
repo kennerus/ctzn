@@ -26,7 +26,7 @@
 	align-items: flex-start;
 	font-size: 19px;
 
-	* {
+	a {
 		margin-top: 20px;
 		line-height: 1.68;
 		opacity: 0.5;
@@ -49,6 +49,11 @@
 				margin-right: 0;
 			}
 		}
+	}
+
+	*:not(a) {
+		margin-top: 20px;
+		line-height: 1.68;
 	}
 
 	@include breakpoint(max-width 1140px) {
