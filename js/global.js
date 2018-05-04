@@ -170,15 +170,31 @@ $(window).scroll(function(event){
 });
 
 $(function() {
-    var block = $('.js_removeTablet .block');
+    var block = $('.js_removeTablet .js_tabletBlock');
     var main =  $('.main');
-    if ($(window).width() <= 1140) {
+    var blocksArr = [];
+    if ($(window).width() <= 1140 && $(window).width() > 750) {
         main.append('<div class="container container_tablet"></div>');
 
         block.each(function() {
             $(this).appendTo('.container_tablet');
+            if (!$(this).hasClass('block_biggest')) {
+                blocksArr.push($(this))
+            }
         });
 
         $('.js_removeTablet').remove();
+
+        for (var i = 0; i < blocksArr.length; i++) {
+            if (i % 2 == 0) {
+                blocksArr[i].css({
+                    marginRight: '50px',
+                })
+            } else {
+                blocksArr[i].css({
+                    marginRight: '0',
+                })
+            }
+        }
     }
 })
