@@ -188,3 +188,12 @@
         margin-right: 0;
     }
 }
+
+.block__container {
+    .block_big {
+        height: auto;
+    }
+    .block_big img {
+        height: 100%
+    }
+}
