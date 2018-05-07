@@ -119,22 +119,22 @@ $(window).scroll(function(event){
 
     if($('.js_hideText').length > 0 && $('.js_hideText').hasClass('js_activeFlex')) {
         var btnClose = $('.js_hideText');
-        var main = $('.main__picture');
+        var main = $('.js_stopScrollCross');
         var mainPos = main.offset();
         var btnCloseOffset = btnClose.offset();
         var btnCloseBot = btnCloseOffset.top + btnClose.height();
         //положение крестика при скролле
         if($(window).width() > 1140) {
-            if (mainPos.top - $(this).scrollTop() > 100 && $(this).scrollTop() > 125) {
+            if (mainPos.top - $(this).scrollTop() > 50 && $(this).scrollTop() > 125) {
                 btnClose.css({
                     top: '10px',
                     position: 'fixed',
                 })
             }
-            else if (mainPos.top - 100 <= btnCloseBot) {
+            else if (mainPos.top - 50 <= btnCloseBot) {
                 btnClose.css({
                     position: 'absolute',
-                    top: (mainPos.top - 235) + 'px'
+                    top: (mainPos.top - 185) + 'px'
                 });
             }
         }
@@ -145,10 +145,10 @@ $(window).scroll(function(event){
                     position: 'fixed',
                 })
             }
-            else if (mainPos.top - 100 <= btnCloseBot) {
+            else if (mainPos.top - 50 <= btnCloseBot) {
                 btnClose.css({
                     position: 'absolute',
-                    top: (mainPos.top - 175) + 'px'
+                    top: (mainPos.top - 125) + 'px'
                 });
             }
         }

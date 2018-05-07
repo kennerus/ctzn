@@ -232,7 +232,7 @@
 	div {
 		align-self: flex-start;
 		width: 100%;
-		margin-top: 7px;
+		margin-top: 3px;
 	}
 	
 	img {
@@ -301,7 +301,6 @@
 		}
 		
 		img {
-			/*height: 100%;*/
 			object-fit: cover;
 
 			@include breakpoint(max-width 1440px) {
@@ -333,13 +332,14 @@
 	}
 
 	&__container {
-		&>.block:nth-child(2) {
+		&>.block:nth-child(2),
+		&>.text-block:nth-child(2) {
 			margin-top: 50px;
 		}
 
 		&_project {
 			&>.block:nth-child(2) {
-				margin-top: 60px;
+				margin-top: 63px;
 
 				@include breakpoint(max-width 1140px) {
 					margin-top: 50px;

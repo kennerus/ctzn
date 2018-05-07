@@ -98,7 +98,7 @@ h1 {
 	}
 }
 
-.title__m h2 {
+h2 {
 	font-size: 34px;
 	font-weight: 500;
 	line-height: 1.24;
@@ -111,7 +111,7 @@ h1 {
 	}
 }
 
-.text__m p {
+h2 ~ p {
 	margin-top: 20px;
 	font-size: 22px;
 	line-height: 1.64;
@@ -129,7 +129,7 @@ h1 {
 	}
 }
 
-.title__sm h3 {
+h3 {
 	font-size: 26px;
 	font-weight: 500;
 	line-height: 1.38;
@@ -141,7 +141,7 @@ h1 {
 	}
 }
 
-.text__sm p {
+h3 ~ p {
 	margin-top: 10px;
 	font-size: 19px;
 	line-height: 1.68;
