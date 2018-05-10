@@ -9,24 +9,6 @@
 		padding-top: 0;
 	}
 
-/*	h1 {
-		font-size: 40px;
-		font-weight: 500;
-		line-height: 1.5;
-		letter-spacing: -0.2px;
-
-		@include breakpoint(max-width 1440px) {
-			font-size: 32px;
-			line-height: 1.88;
-		}
-
-		@include breakpoint(max-width 750px) {
-			font-size: 24px;
-			line-height: 1.42;
-			letter-spacing: -0.1px;
-		}
-	}*/
-
 	&__head {
 		text-align: center;
 	}
@@ -338,7 +320,8 @@
 		}
 
 		&_project {
-			&>.block:nth-child(2) {
+			&>.block:nth-child(2),
+			&>.text-block:nth-child(2) {
 				margin-top: 63px;
 
 				@include breakpoint(max-width 1140px) {
@@ -368,6 +351,7 @@
 	}
 
 	p {
+		margin-top: 0;
 		font-size: 14px;
 		font-weight: 300;
 		line-height: 1;
