@@ -25,6 +25,10 @@
             align-items: center;
         }
 
+        &-first {
+            margin-top: 30px;
+        }
+
         @include breakpoint(max-width 1140px) {
             flex-wrap: wrap;
             margin-top: 0;
