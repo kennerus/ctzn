@@ -62,7 +62,6 @@ h1 {
 		line-height: 1.36;
 		letter-spacing: -0.2px;
 	}
-
 	&+p {
 		margin-top: 20px;
 		font-size: 24px;
@@ -83,6 +82,7 @@ h1 {
 	}
 }
 
+
 .main__headline {
 	h2 {
 		margin-bottom: 20px;
@@ -96,27 +96,42 @@ h1 {
 			line-height: 1.36;
 			letter-spacing: -0.2px;
 		}
+	}
+	&+p {
+		margin-top: 20px;
+		font-size: 24px;
+		line-height: 1.67;
+		letter-spacing: -0.1px;
+		transition: all 0.2s linear;
 
-		&+p {
-			margin-top: 20px;
-			font-size: 24px;
-			line-height: 1.67;
-			letter-spacing: -0.1px;
-			transition: all 0.2s linear;
+		&:first-child {
+			margin-top: 0;
+		}
 
-			&:first-child {
-				margin-top: 0;
-			}
-
-			@include breakpoint(max-width 750px) {
-				margin-top: 15px;
-				font-size: 20px;
-				line-height: 1.7;
-				letter-spacing: -0.1px
-			}
+		@include breakpoint(max-width 750px) {
+			margin-top: 15px;
+			font-size: 20px;
+			line-height: 1.7;
+			letter-spacing: -0.1px
 		}
 	}
-	
+}
+
+.no_subheadline {
+	p {
+		margin-top: 10px;
+		font-size: 19px;
+		line-height: 1.68;
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		@include breakpoint(max-width 750px) {
+			font-size: 14px;
+			line-height: 1.71;
+		}
+	}
 }
 
 h2 {
@@ -194,6 +209,10 @@ figcaption {
 	margin-top: 50px;
 	font-size: 15px;
 	line-height: 1.73;
+
+	@include breakpoint(max-width 1140px) {
+		margin-top: 0;
+	}
 
 	@include breakpoint(max-width 750px) {
 		font-size: 12px;

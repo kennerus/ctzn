@@ -1,80 +1,80 @@
 html {
-    width: 100%;
+  width: 100%;
 }
-body {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-weight: inherit;
-    font-style: inherit;
-    text-align: left;
-    vertical-align: baseline;
-    counter-reset: counter;
-    font-family: 'HeroNew', sans-serif;
-    font-weight: 300;
-    font-stretch: normal;
 
-    
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  text-align: left;
+  vertical-align: baseline;
+  counter-reset: counter;
+  font-family: 'HeroNew', sans-serif;
+  font-weight: 300;
+  font-stretch: normal;
+
 }
 
 .body__custom-cursor {
+  cursor: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7), auto;
+
+  p, h1, h2, h3, button, span, figure, picture, img, section, a, input, textarea {
     cursor: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7), auto;
 
-    p, h1, h2, h3, button, span, figure, picture, img, section, a, input, textarea  {
-        cursor: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7), auto;
-        
-        @include breakpoint(max-width 1140px) {
-            cursor: auto;
-        }
-    }
     @include breakpoint(max-width 1140px) {
-        cursor: auto;
+      cursor: auto;
     }
+  }
+  @include breakpoint(max-width 1140px) {
+    cursor: auto;
+  }
 }
 
-p, h1, h2, h3, button, span, figure, picture, img, section  {
-    margin: 0;
+p, h1, h2, h3, button, span, figure, picture, img, section {
+  margin: 0;
 }
 
 button, a {
-    outline: none;
+  outline: none;
 
-    &:focus, &:active {
-        outline: none;
-    }
+  &:focus, &:active {
+    outline: none;
+  }
 }
 
 a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 
-    &:hover, &:focus, &:active{
-        text-decoration: none;
-        color: inherit;
-    }
+  &:hover, &:focus, &:active {
+    text-decoration: none;
+    color: inherit;
+  }
 }
+
 input {
+  outline: none;
+  &:hover, &:focus, &:active {
     outline: none;
-    &:hover, &:focus, &:active {
-        outline: none;
-    }
+  }
 }
 
 textarea {
+  outline: none;
+
+  &:hover, &:focus, &:active {
     outline: none;
-    
-    &:hover, &:focus, &:active{
-        outline: none;
-    }
+  }
 }
 
 figure {
-    width: 100%;
-    margin: 0;
-    cursor: url('../img/icons/cursor.png'), auto;
+  width: 100%;
+  margin: 0;
 }
 
 picture {
-    width: 100%;
+  width: 100%;
 }
