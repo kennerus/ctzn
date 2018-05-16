@@ -35,6 +35,10 @@
         }
     }
 
+    &_wrap {
+        flex-wrap: wrap;
+    }
+
     &_tablet {
         display: flex;
         align-items: flex-start;

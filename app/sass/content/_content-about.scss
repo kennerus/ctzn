@@ -7,10 +7,38 @@
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	width: calc((100% - 100px) / 3);
+  margin-right: 50px;
 	padding: 20px;
 	background-color: #f2f2f2;
 	border-radius: 5px;
 	box-sizing: border-box;
+
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
+
+  &:nth-child(n + 4) {
+    margin-top: 50px;
+  }
+
+  @include breakpoint(max-width 1140px) {
+    width: calc(50% - 25px);
+    margin-top: 50px;
+
+    &:nth-child(3n) {
+      margin-right: auto;
+    }
+
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
+
+  @include breakpoint(max-width 750px) {
+    width: 100%;
+    margin-right: 0;
+  }
 	
 	&>a {
 		width: 100px !important;
