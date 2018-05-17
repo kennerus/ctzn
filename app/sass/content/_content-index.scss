@@ -319,7 +319,7 @@
 		justify-content: space-between;
 
 		&>.block:nth-child(2),
-    figure:nth-child(2) {
+    figure:nth-child(n + 2) {
 			margin-top: 50px;
 		}
 
@@ -338,14 +338,17 @@
             margin-top: 0;
 						margin-right: 0;
           }
+
+					&:nth-child(n+3) {
+						margin-top: 50px;
+					}
         }
 
         @include breakpoint(max-width 750px) {
           width: 100%;
-          margin-top: 30px;
           margin-right: 0;
 
-          &:nth-child(2) {
+          &:nth-child(n + 2) {
             margin-top: 30px;
           }
         }
@@ -378,6 +381,7 @@
 	}
 
 	h2 {
+    margin-top: 0;
 		font-size: 20px;
 		font-weight: 500;
 		line-height: 1.9;

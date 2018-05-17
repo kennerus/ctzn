@@ -1,321 +1,323 @@
 @mixin linkHover($color) {
-	&:hover, &:active, &:focus {
-		color: $color;
-	}
+  &:hover, &:active, &:focus {
+    color: $color;
+  }
 }
 
 @mixin textShadow($color) {
-	text-shadow:
-	-2px -2px $color,
-	-2px 2px $color,
-	2px -2px $color,
-	2px 2px $color;
+  text-shadow: -2px -2px $color,
+  -2px 2px $color,
+  2px -2px $color,
+  2px 2px $color;
 }
 
 @mixin underline($bgColor, $underlineColor) {
-	box-shadow:
-	inset 0 -4px $bgColor,
-	inset 0 -6px $underlineColor;
+  box-shadow: inset 0 -4px $bgColor,
+  inset 0 -6px $underlineColor;
 
-	&:hover, &:active, &:focus {
-		box-shadow: 0 0 transparent;
-	}
+  &:hover, &:active, &:focus {
+    box-shadow: 0 0 transparent;
+  }
 }
 
 @mixin smallUnderline($bgColor, $underlineColor) {
-	box-shadow:
-	inset 0 -3px $bgColor,
-	inset 0 -5px $underlineColor;
+  box-shadow: inset 0 -3px $bgColor,
+  inset 0 -5px $underlineColor;
 
-	&:hover, &:active, &:focus {
-		box-shadow: 0 0 transparent;
-	}
+  &:hover, &:active, &:focus {
+    box-shadow: 0 0 transparent;
+  }
 }
 
 @mixin smallUnderlineCase($bgColor, $underlineColor) {
-	box-shadow:
-	inset 0 -3px $bgColor,
-	inset 0 -5px $underlineColor;
+  box-shadow: inset 0 -3px $bgColor,
+  inset 0 -5px $underlineColor;
 }
 
 .overflow-hidden {
-	overflow-y: hidden;
+  overflow-y: hidden;
 }
 
 .main__picture {
-	width: 100%;
+  width: 100%;
 
-	@include breakpoint(max-width 1140px) {
-		margin-top: 50px;
-	}
+  @include breakpoint(max-width 1140px) {
+    margin-top: 50px;
+  }
 }
 
 h1 {
-	margin-bottom: 20px;
-	font-size: 46px;
-	font-weight: 500;
-	line-height: 1.3;
-	letter-spacing: -0.3px;
+  margin-bottom: 20px;
+  font-size: 46px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.3px;
 
-	@include breakpoint(max-width 750px) {
-		font-size: 28px;
-		line-height: 1.36;
-		letter-spacing: -0.2px;
-	}
-	&+p {
-		margin-top: 20px;
-		font-size: 24px;
-		line-height: 1.67;
-		letter-spacing: -0.1px;
-		transition: all 0.2s linear;
+  @include breakpoint(max-width 750px) {
+    font-size: 28px;
+    line-height: 1.36;
+    letter-spacing: -0.2px;
+  }
+  & + p {
+    margin: 20px 0;
+    font-size: 24px;
+    line-height: 1.67;
+    letter-spacing: -0.1px;
+    transition: all 0.2s linear;
 
-		&:first-child {
-			margin-top: 0;
-		}
+    &:first-child {
+      margin-top: 0;
+    }
 
-		@include breakpoint(max-width 750px) {
-			margin-top: 15px;
-			font-size: 20px;
-			line-height: 1.7;
-			letter-spacing: -0.1px
-		}
-	}
+    @include breakpoint(max-width 750px) {
+      margin-top: 15px;
+      font-size: 20px;
+      line-height: 1.7;
+      letter-spacing: -0.1px
+    }
+  }
 }
 
-
 .main__headline {
-	h2 {
-		margin-bottom: 20px;
-		font-size: 46px;
-		font-weight: 500;
-		line-height: 1.3;
-		letter-spacing: -0.3px;
+  h2 {
+    margin-bottom: 20px;
+    font-size: 46px;
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: -0.3px;
 
-		@include breakpoint(max-width 750px) {
-			font-size: 28px;
-			line-height: 1.36;
-			letter-spacing: -0.2px;
-		}
-	}
-	&+p {
-		margin-top: 20px;
-		font-size: 24px;
-		line-height: 1.67;
-		letter-spacing: -0.1px;
-		transition: all 0.2s linear;
+    @include breakpoint(max-width 750px) {
+      font-size: 28px;
+      line-height: 1.36;
+      letter-spacing: -0.2px;
+    }
+  }
+  & + p {
+    margin: 20px 0;
+    font-size: 24px;
+    line-height: 1.67;
+    letter-spacing: -0.1px;
+    transition: all 0.2s linear;
 
-		&:first-child {
-			margin-top: 0;
-		}
+    &:first-child {
+      margin-top: 0;
+    }
 
-		@include breakpoint(max-width 750px) {
-			margin-top: 15px;
-			font-size: 20px;
-			line-height: 1.7;
-			letter-spacing: -0.1px
-		}
-	}
+    @include breakpoint(max-width 750px) {
+      margin-top: 15px;
+      font-size: 20px;
+      line-height: 1.7;
+      letter-spacing: -0.1px
+    }
+  }
 }
 
 .no_subheadline {
-	p {
-		margin-top: 10px;
-		font-size: 19px;
-		line-height: 1.68;
+  p {
+    margin-top: 10px;
+    font-size: 19px;
+    line-height: 1.68;
 
-		&:first-child {
-			margin-top: 0;
-		}
+    &:first-child {
+      margin-top: 0;
+    }
 
-		@include breakpoint(max-width 750px) {
-			font-size: 14px;
-			line-height: 1.71;
-		}
-	}
+    @include breakpoint(max-width 750px) {
+      font-size: 14px;
+      line-height: 1.71;
+    }
+  }
 }
 
 h2 {
-	font-size: 34px;
-	font-weight: 500;
-	line-height: 1.24;
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 1.24;
 
-	@include breakpoint(max-width 750px) {
-		margin-top: 20px;
-		font-size: 24px;
-		line-height: 1.42;
-		letter-spacing: -0.1px;
-	}
+  @include breakpoint(max-width 750px) {
+    margin-top: 20px;
+    font-size: 24px;
+    line-height: 1.42;
+    letter-spacing: -0.1px;
+  }
 }
 
 h2 + p {
-	margin-top: 20px;
-	font-size: 22px;
-	line-height: 1.64;
-	letter-spacing: -0.2px;
+  margin-top: 20px;
+  font-size: 22px;
+  line-height: 1.64;
+  letter-spacing: -0.2px;
 
-	&:first-child {
-		margin-top: 0;
-	}
+  &:first-child {
+    margin-top: 0;
+  }
 
-	@include breakpoint(max-width 750px) {
-		margin-top: 10px;
-		font-size: 18px;
-		line-height: 1.67;
-		letter-spacing: -0.1px;
-	}
+  @include breakpoint(max-width 750px) {
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: 1.67;
+    letter-spacing: -0.1px;
+  }
 }
 
 h3 {
-	font-size: 26px;
-	font-weight: 500;
-	line-height: 1.38;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.38;
 
-	@include breakpoint(max-width 750px) {
-		font-size: 20px;
-		line-height: 1.7;
-		letter-spacing: -0.1px;
-	}
+  @include breakpoint(max-width 750px) {
+    font-size: 20px;
+    line-height: 1.7;
+    letter-spacing: -0.1px;
+  }
 }
 
 p {
-	margin-top: 10px;
-	font-size: 19px;
-	line-height: 1.68;
+  margin-top: 10px;
+  font-size: 19px;
+  line-height: 1.68;
 
-	&:first-child {
-		margin-top: 0;
-	}
+  &:first-child {
+    margin-top: 0;
+  }
 
-	@include breakpoint(max-width 750px) {
-		font-size: 14px;
-		line-height: 1.71;
-	}
+  @include breakpoint(max-width 750px) {
+    font-size: 14px;
+    line-height: 1.71;
+  }
 }
 
 .main__picture {
-	@include breakpoint(max-width 750px) {
-		margin-top: 50px;
-	}
+  @include breakpoint(max-width 750px) {
+    margin-top: 50px;
+  }
 }
 
 figcaption {
-	margin-top: 10px !important;
-	font-size: 12px;
-	line-height: normal;
-	opacity: 0.5;
+  margin-top: 10px !important;
+  font-size: 12px;
+  line-height: normal;
+  opacity: 0.5;
 }
 
-.sign p {
-	margin-top: 50px;
-	font-size: 15px;
-	line-height: 1.73;
+.sign {
+  p {
+    margin-top: 10px;
+    font-size: 15px;
+    line-height: 1.73;
 
-	@include breakpoint(max-width 1140px) {
-		margin-top: 0;
-	}
+    &:first-child {
+      margin-top: 0;
+    }
 
-	@include breakpoint(max-width 750px) {
-		font-size: 12px;
-		line-height: 1.83;
-	}
+    @include breakpoint(max-width 1140px) {
+      margin-top: 0;
+    }
+
+    @include breakpoint(max-width 750px) {
+      font-size: 12px;
+      line-height: 1.83;
+    }
+  }
 }
 
 .close-text {
-	position: absolute;
-	top: auto;
-	z-index: 2;
-	display: none;
-	width: 52px;
-	height: 52px;
-	padding: 17px;
-	background-color: white;
-	border: none;
-	border-radius: 50%;
-	cursor: pointer;
+  position: absolute;
+  top: auto;
+  z-index: 2;
+  display: none;
+  width: 52px;
+  height: 52px;
+  padding: 17px;
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 .button-container {
-	position: absolute;
-	right: 0;
-	width: 52px;
-	height: 52px;
+  position: absolute;
+  right: 0;
+  width: 52px;
+  height: 52px;
 }
+
 .hidden,
 .hidden_flex {
-	max-height: 0;
-	overflow: hidden;
-	margin: 0 auto !important;
-	transition: all 0.2s linear;
+  max-height: 0;
+  overflow: hidden;
+  margin: 0 auto !important;
+  transition: all 0.2s linear;
 }
 
 .slide-down {
-	display: flex;
-	align-items: center;
-	margin-top: 10px;
-	padding: 0;
-	background-color: white;
-	border: none;
-	opacity: 0.5;
-	cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  padding: 0;
+  background-color: white;
+  border: none;
+  opacity: 0.5;
+  cursor: pointer;
 
-	&:hover {
-		opacity: 1;
-	}
+  &:hover {
+    opacity: 1;
+  }
 
-	&__text {
-		margin-right: 10px;
-		font-size: 19px;
-	}
+  &__text {
+    margin-right: 10px;
+    font-size: 19px;
+  }
 }
 
 .cursor {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	z-index: 99999;
-	display: flex;
-	align-items: center;
-	width: 20px;
-	height: 20px;
-	color: white;
-	background-color: black;
-	border-radius: 50%;
-	box-sizing: border-box;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  color: white;
+  background-color: black;
+  border-radius: 50%;
+  box-sizing: border-box;
 
-	&__eye {
-		position: relative;
-		display: none;
-		width: 12px;
-		height: 12px;
-		margin-right: 5px;
-		background-color: white;
-		border-radius: 12px;
-	}
+  &__eye {
+    position: relative;
+    display: none;
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+    background-color: white;
+    border-radius: 12px;
+  }
 
-	&__pupil {
-		display: block;
-		position: absolute;
-		top: 25%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		width: 5px;
-		height: 5px;
-		background-color: black;
-		border-radius: 50%;
-	}
+  &__pupil {
+    display: block;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 5px;
+    height: 5px;
+    background-color: black;
+    border-radius: 50%;
+  }
 
-	&__text {
-		font-size: 12px;
-		letter-spacing: -0.1px;
-	}
+  &__text {
+    font-size: 12px;
+    letter-spacing: -0.1px;
+  }
 
-	&_active {
-		padding: 0 6px;
-		width: 90px;
-		border-radius: 10px;
-	}
+  &_active {
+    padding: 0 6px;
+    width: 90px;
+    border-radius: 10px;
+  }
 
-	@include breakpoint(max-width 1140px) {
-		display: none;
-	}
+  @include breakpoint(max-width 1140px) {
+    display: none;
+  }
 }

@@ -162,15 +162,19 @@ $(window).scroll(function (event) {
   }
 });
 
-// save dom
+// сохранение дом дерева при загрузке страницы, чтобы можно было
+// менять разметку при ресайзе
 var virtualDOM = $('#root').html();
 
 $(function () {
   var flag = true;
   var blocksFlag = true;
   var blocks = $('.js_tabletBlock');
+  var root = $('#root');
 
+  // вынимает блоки из контейнеров для сетки на планшетах
   function reconstructDOM() {
+    var root = $('#root');
     var block = $('.js_removeTablet .js_tabletBlock');
     var main = $('.main');
     var blocksArr = [];
@@ -186,7 +190,7 @@ $(function () {
     $('.js_removeTablet').remove();
 
     for (var i = 0; i < blocksArr.length; i++) {
-      if (i % 2 == 0 && $(window).width() > 750) {
+      if (i % 2 === 0 && $(window).width() > 750) {
         blocksArr[i].css({
           marginRight: '50px',
         })
@@ -201,43 +205,27 @@ $(function () {
   if ($(window).width() <= 1140) {
     flag = false;
     reconstructDOM();
-    var virtualDOMTablet = $('#root').html();
+    var virtualDOMTablet = root.html();
   }
 
 
   $(window).resize(function () {
-    if ($('#root').html() !== virtualDOM && $(window).width() > 1140 && flag) {
+    if (root.html() !== virtualDOM && $(window).width() > 1140 && flag) {
       blocksFlag = true;
       flag = false;
       $('#root').html(virtualDOM);
     }
-    if ($(window).width() <= 1140 && !flag && $('#root').html() !== virtualDOMTablet) {
+    if ($(window).width() <= 1140 && !flag && root.html() !== virtualDOMTablet) {
       blocksFlag = true;
       flag = true;
       if (virtualDOMTablet) {
         $('#root').html(virtualDOMTablet);
       }
       if (virtualDOMTablet === undefined) {
-        $('#root').html(virtualDOM);
+        root.html(virtualDOM);
         reconstructDOM();
-        var virtualDOMTablet = $('#root').html();
+        var virtualDOMTablet = root.html();
       }
     }
-    // if ($(window).width() > 750 && !blocksFlag) {
-    //   blocksFlag = true;
-    //   for (var i = 0; i < blocks.length; i++) {
-    //     if (i % 2 == 0) {
-    //       blocks[i].css({
-    //         marginRight: '50px',
-    //       })
-    //     }
-    //   }
-    // }
-    // if ($(window).width() <= 750 && blocksFlag) {
-    //   blocksFlag = false;
-    //   blocks.css({
-    //     marginRight: '0',
-    //   });
-    // }
   })
 });
