@@ -54,6 +54,15 @@
 	*:not(a) {
 		margin-top: 20px;
 		line-height: 1.68;
+
+		@include breakpoint(max-width 1140px) {
+			margin-top: 0;
+			margin-right: 30px;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
 	}
 
 	@include breakpoint(max-width 1140px) {
@@ -62,40 +71,5 @@
 		overflow-x: auto;
 		padding-bottom: 5px;
 	}
-}
-
-figure > div {
-	&>picture {
-		display: block;
-		margin-top: 50px;
-
-		&:first-child {
-			margin-top: 0;
-		}
-
-		@include breakpoint(max-width 1140px) {
-			width: calc(50% - 25px);
-			margin-top: 0;
-			margin-right: 50px;
-
-			&:last-child {
-				margin-right: 0;
-			}
-		}
-
-		@include breakpoint(max-width 750px) {
-			width: 100%;
-			margin-top: 30px;
-			margin-right: 0;
-		}
-	}
-
-	@include breakpoint(max-width 1140px) {
-		display: flex;
-		flex-wrap: wrap;
-		overflow-x: auto;
-		overflow-y: hidden;
-	}
-
 }
 

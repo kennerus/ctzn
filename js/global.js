@@ -39,14 +39,7 @@ $(function () {
   });
 
   // text truncate
-  if ($(window).width() < 1440 && $(window).width() > 750) {
-    $('.text-block p').dotdotdot({
-      ellipsis: "\u2026 ",
-      height: 140
-    });
-  }
-
-  if ($(window).width() < 750) {
+  if ($(window).width() < 1440) {
     $('.text-block p').dotdotdot({
       ellipsis: "\u2026 ",
       height: 100
@@ -169,24 +162,31 @@ $(window).scroll(function (event) {
   }
 });
 
+// save dom
+var virtualDOM = $('#root').html();
+
 $(function () {
-  var block = $('.js_removeTablet .js_tabletBlock');
-  var main = $('.main');
-  var blocksArr = [];
-  if ($(window).width() <= 1140 && $(window).width() > 750) {
+  var flag = true;
+  var blocksFlag = true;
+  var blocks = $('.js_tabletBlock');
+
+  function reconstructDOM() {
+    var block = $('.js_removeTablet .js_tabletBlock');
+    var main = $('.main');
+    var blocksArr = [];
     main.append('<div class="container container_tablet"></div>');
 
     block.each(function () {
       $(this).appendTo('.container_tablet');
       if (!$(this).hasClass('block_biggest')) {
-        blocksArr.push($(this))
+        blocksArr.push($(this));
       }
     });
 
     $('.js_removeTablet').remove();
 
     for (var i = 0; i < blocksArr.length; i++) {
-      if (i % 2 == 0) {
+      if (i % 2 == 0 && $(window).width() > 750) {
         blocksArr[i].css({
           marginRight: '50px',
         })
@@ -197,4 +197,47 @@ $(function () {
       }
     }
   }
-})
+
+  if ($(window).width() <= 1140) {
+    flag = false;
+    reconstructDOM();
+    var virtualDOMTablet = $('#root').html();
+  }
+
+
+  $(window).resize(function () {
+    if ($('#root').html() !== virtualDOM && $(window).width() > 1140 && flag) {
+      blocksFlag = true;
+      flag = false;
+      $('#root').html(virtualDOM);
+    }
+    if ($(window).width() <= 1140 && !flag && $('#root').html() !== virtualDOMTablet) {
+      blocksFlag = true;
+      flag = true;
+      if (virtualDOMTablet) {
+        $('#root').html(virtualDOMTablet);
+      }
+      if (virtualDOMTablet === undefined) {
+        $('#root').html(virtualDOM);
+        reconstructDOM();
+        var virtualDOMTablet = $('#root').html();
+      }
+    }
+    // if ($(window).width() > 750 && !blocksFlag) {
+    //   blocksFlag = true;
+    //   for (var i = 0; i < blocks.length; i++) {
+    //     if (i % 2 == 0) {
+    //       blocks[i].css({
+    //         marginRight: '50px',
+    //       })
+    //     }
+    //   }
+    // }
+    // if ($(window).width() <= 750 && blocksFlag) {
+    //   blocksFlag = false;
+    //   blocks.css({
+    //     marginRight: '0',
+    //   });
+    // }
+  })
+});

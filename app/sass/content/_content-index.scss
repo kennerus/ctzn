@@ -318,9 +318,39 @@
 		flex-direction: column;
 		justify-content: space-between;
 
-		&>.block:nth-child(2) {
+		&>.block:nth-child(2),
+    figure:nth-child(2) {
 			margin-top: 50px;
 		}
+
+    &_case {
+      @include breakpoint(max-width 1140px) {
+        flex-direction: row;
+      }
+
+      figure {
+        @include breakpoint(max-width 1140px) {
+          width: calc(50% - 25px);
+          margin-top: 0;
+          margin-right: 50px;
+
+          &:nth-child(2n) {
+            margin-top: 0;
+						margin-right: 0;
+          }
+        }
+
+        @include breakpoint(max-width 750px) {
+          width: 100%;
+          margin-top: 30px;
+          margin-right: 0;
+
+          &:nth-child(2) {
+            margin-top: 30px;
+          }
+        }
+      }
+    }
 
 		&_project {
 			&>.block:nth-child(2) {
@@ -333,6 +363,10 @@
 
 			&>.text-block:nth-child(2) {
 				margin-bottom: 48px;
+
+				@include breakpoint(max-width 1440px) {
+					margin-bottom: 42px;
+				}
 			}
 		}
 
@@ -427,14 +461,13 @@
 		align-items: flex-start;
 		width: calc(50% - 25px);
 		max-width: 475px;
-		min-width: 300px;
+		min-width: inherit;
 		height: auto;
 		min-height: inherit;
 		padding: 30px;
 	}
 
 	@include breakpoint(max-width 750px) {
-		min-width: 280px;
 		width: 100%;
 		max-width: 100%;
 	}
@@ -699,17 +732,31 @@
 
 	&_short-desc {
 		p {
-			max-width: 35%;
+			max-width: 35% !important;
 
-			@include breakpoint(max-width 1440px) {
-				max-width: 30% !important;
-			}
+      @include breakpoint(max-width 1440px) {
+        max-width: 25% !important;
+      }
 
 			@include breakpoint(max-width 1140px) {
 				max-width: 100% !important;
 			}
 		}
 	}
+
+  &__medium-desc {
+    p {
+      max-width: 42% !important;
+
+      @include breakpoint(max-width 1440px) {
+        max-width: 30% !important;
+      }
+
+      @include breakpoint(max-width 1140px) {
+        max-width: 100% !important;
+      }
+    }
+  }
 
 	&_with-title {
 		position: relative;

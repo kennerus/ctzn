@@ -71,9 +71,6 @@ $(function () {
 
     },
     function (event) {
-      console.log('out');
-      console.log(event);
-      console.log($(this)[0])
       $(this).css({
         color: '#000',
         backgroundColor: '#fff',
