@@ -189,6 +189,7 @@
 	justify-content: flex-start;
 	align-items: center;
 	width: 100%;
+	font-size: 0;
 
 	@include breakpoint(max-width 1140px) {
 		width: calc(50% - 25px) !important;
@@ -214,7 +215,8 @@
 	div {
 		align-self: flex-start;
 		width: 100%;
-		margin-top: 3px;
+		padding-top: 3px;
+		box-sizing: border-box;
 	}
 	
 	img {
@@ -304,10 +306,8 @@
 			}
 
 			div {
-				margin: 0;
-
 				@include breakpoint(max-width 1440px) {
-					margin-top: 7px;
+					padding-top: 7px;
 				}
 			}
 		}
@@ -318,7 +318,7 @@
 		flex-direction: column;
 		justify-content: space-between;
 
-		&>.block:nth-child(2),
+		&>.block:nth-child(n + 2),
     figure:nth-child(n + 2) {
 			margin-top: 50px;
 		}
@@ -356,7 +356,25 @@
     }
 
 		&_project {
-			&>.block:nth-child(2) {
+			flex-direction: row;
+			align-items: flex-start;
+			flex-wrap: wrap;
+
+			.text-block {
+				align-self: stretch;
+				margin-top: 50px;
+
+				@include breakpoint(max-width 1440px) {
+					height: auto;
+					margin-top: auto;
+
+					h2 {
+						font-size: 120px !important;
+					}
+				}
+			}
+
+			&>.block:nth-child(n + 2) {
 				margin-top: 63px;
 
 				@include breakpoint(max-width 1140px) {
@@ -364,13 +382,7 @@
 				}
 			}
 
-			&>.text-block:nth-child(2) {
-				margin-bottom: 48px;
 
-				@include breakpoint(max-width 1440px) {
-					margin-bottom: 42px;
-				}
-			}
 		}
 
 		@include breakpoint(max-width 1140px) {
@@ -459,23 +471,6 @@
 	box-sizing: border-box;
 	overflow: hidden;
 
-	@include breakpoint(max-width 1140px) {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		width: calc(50% - 25px);
-		max-width: 475px;
-		min-width: inherit;
-		height: auto;
-		min-height: inherit;
-		padding: 30px;
-	}
-
-	@include breakpoint(max-width 750px) {
-		width: 100%;
-		max-width: 100%;
-	}
-
 	&_green {
 		background-color: #128972;
 	}
@@ -544,8 +539,6 @@
 	h2 {
 		position: relative;
 		z-index: 1;
-		/*float: left;*/
-		/*grid-row: 1 / span 2;*/
 		margin-right: 100px;
 		font-family: 'DomaineSansDisplay', serif;
 		font-size: 160px;
@@ -563,7 +556,6 @@
 		@include breakpoint(max-width 1140px) {
 			margin-top: -10px;
 			margin-right: 0;
-			font-size: 150px !important;
 		}
 	}
 
@@ -878,8 +870,7 @@
 		align-items: flex-start;
 		width: calc(50% - 25px);
 		max-width: 475px;
-		min-width: 300px;
-		height: auto;
+		min-width: inherit;
 		min-height: inherit;
 		padding: 30px;
 	}

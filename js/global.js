@@ -44,6 +44,11 @@ $(function () {
       ellipsis: "\u2026 ",
       height: 100
     });
+
+    $('.block__container .text-block p').dotdotdot({
+      ellipsis: "\u2026 ",
+      height: 80
+    })
   }
 
   // hide-show custom cursor on header elements
@@ -171,6 +176,36 @@ $(function () {
   var blocksFlag = true;
   var blocks = $('.js_tabletBlock');
   var root = $('#root');
+  var textBlockContainers = $('.block__container_project');
+  // подгоняем отступ для цветного блока, который находятся рядом с обычными
+  textBlockContainers.each(function () {
+    var textBlocks = $(this).find('.text-block');
+    var siblings = $(this).siblings('.block');
+    var siblingsTitleHeight = [];
+    var maxSiblingTitleHeight = $(siblings[0]).find('div').outerHeight();
+
+    if ($(this).children().length === 1) {
+      $(this).css({
+        alignSelf: 'stretch'
+      });
+      textBlocks.css({
+        marginTop: '0'
+      })
+    }
+
+    for (var i = 0; i < siblings.length; i++) {
+      siblingsTitleHeight.push($(siblings[i]).find('div').outerHeight());
+    }
+    for (i = 0; i < siblingsTitleHeight.length; i++) {
+      if (siblingsTitleHeight[i] > maxSiblingTitleHeight) {
+        maxSiblingTitleHeight = siblingsTitleHeight;
+      }
+    }
+    for (i = 0; i < textBlocks.length; i++) {
+      $(textBlocks[i]).css('marginBottom', maxSiblingTitleHeight + 'px');
+    }
+  });
+
 
   // вынимает блоки из контейнеров для сетки на планшетах
   function reconstructDOM() {
@@ -192,11 +227,11 @@ $(function () {
     for (var i = 0; i < blocksArr.length; i++) {
       if (i % 2 === 0 && $(window).width() > 750) {
         blocksArr[i].css({
-          marginRight: '50px',
+          marginRight: '50px'
         })
       } else {
         blocksArr[i].css({
-          marginRight: '0',
+          marginRight: '0'
         })
       }
     }
@@ -227,5 +262,7 @@ $(function () {
         var virtualDOMTablet = root.html();
       }
     }
-  })
+  });
+
+
 });
