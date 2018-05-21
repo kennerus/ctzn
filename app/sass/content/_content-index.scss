@@ -52,7 +52,8 @@
 			@include breakpoint(max-width 1140px) {
 				height: 70px;
 				padding: 0 20px;
-				overflow-x: auto;
+				overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
 			}
 
 			@include breakpoint(max-width 750px) {
@@ -144,12 +145,14 @@
 
 		&_left {
 			left: 0;
-			background-image: linear-gradient(to right, #fff, transparent);
+			// gradient hack for safari
+			background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0.01));
 		}
 
 		&_right {
 			right: 0;
-			background-image: linear-gradient(to left, #fff, transparent);
+			// gradient hack for safari
+			background-image: linear-gradient(to left, #fff, rgba(255, 255, 255, 0.01));
 		}
 
 		@include breakpoint(max-width 1140px) {

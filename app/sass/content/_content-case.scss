@@ -55,6 +55,10 @@
 		margin-top: 20px;
 		line-height: 1.68;
 
+		&:first-child {
+			margin-top: 0;
+		}
+
 		@include breakpoint(max-width 1140px) {
 			margin-top: 0;
 			margin-right: 30px;
@@ -67,9 +71,16 @@
 
 	@include breakpoint(max-width 1140px) {
 		flex-direction: row;
+		height: 38px;
 		white-space: nowrap;
-		overflow-x: auto;
+		overflow-x: scroll;
+		-webkit-overflow-scrolling: touch;
 		padding-bottom: 5px;
+
+		&-wrapper {
+			height: 35px;
+			overflow: hidden;
+		}
 	}
 }
 
