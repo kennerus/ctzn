@@ -39,17 +39,10 @@ $(function () {
   });
 
   // text truncate
-  if ($(window).width() < 1440) {
-    $('.text-block p').dotdotdot({
-      ellipsis: "\u2026 ",
-      height: 100
-    });
-
-    $('.block__container .text-block p').dotdotdot({
-      ellipsis: "\u2026 ",
-      height: 80
-    })
-  }
+  $('.text-block p a').dotdotdot({
+    ellipsis: "\u2026",
+    height: 100,
+  });
 
   // hide-show custom cursor on header elements
   $(document).on('mouseenter', '.js_cursorPointer', function () {
@@ -140,7 +133,7 @@ $(window).scroll(function (event) {
       if (mainPos.top - $(this).scrollTop() > 100 && $(this).scrollTop() > 80) {
         btnClose.css({
           top: '10px',
-          position: 'fixed',
+          position: 'fixed'
         })
       }
       else if (mainPos.top - 50 <= btnCloseBot) {
@@ -167,6 +160,103 @@ $(window).scroll(function (event) {
   }
 });
 
+// делаем текстовые блоки нужной высоты, отталкиваясь от эталонной картинки
+var smallImgContainer, smallImgHeight, textBlocks, siblings, maxSiblingTitleHeight;
+var siblingsTitleHeight = [];
+
+function changeTextBlockHeight() {
+  smallImgContainer = document.querySelector('.js_etalon');
+  smallImgHeight = smallImgContainer.clientHeight - smallImgContainer.querySelector('div').clientHeight;
+
+  if ($(window).width() <= 1140 && $(window).width() > 750) {
+    $('.text-block').each(function () {
+      if (!$(this).hasClass('js_changeHeight')) {
+        $(this).addClass('js_changeHeight');
+      }
+    });
+  }
+
+  if ($(window).width() > 750) {
+    var textBlocks = $('.js_changeHeight');
+    textBlocks.css({
+      height: smallImgHeight
+    });
+  }
+}
+
+// меняем размер шрифта в зависимости от ширины блока
+var textBlock = $('.text-block');
+var textBlockTitle = $('.text-block h2');
+var textBlockText = $('.text-block p');
+var textBlockWidth = textBlock.outerWidth();
+var titleFontSize = (textBlockWidth - 60) / 3;
+
+function variousTextBlockFontSize() {
+  textBlock = $('.text-block');
+  textBlockTitle = $('.text-block h2');
+  textBlockText = $('.text-block p');
+  textBlockWidth = textBlock.outerWidth();
+  titleFontSize = (textBlockWidth - 60) / 3;
+
+  if (textBlockWidth > 475) {
+    textBlock.css({
+      height: '427px'
+    });
+
+    textBlockTitle.css({
+      fontSize: titleFontSize+ 'px'
+    });
+
+    textBlockText.css({
+      fontSize: '26px',
+      lineHeight: '1.54'
+    })
+  } else if (textBlockWidth > 400 && textBlockWidth <= 475) {
+    textBlockTitle.css({
+      fontSize: titleFontSize+ 'px'
+    });
+
+    textBlockText.css({
+      fontSize: '22px'
+    })
+  } else if (textBlockWidth > 350 && textBlockWidth <= 400) {
+    textBlockTitle.css({
+      fontSize: titleFontSize+ 'px'
+    });
+
+    textBlockText.css({
+      fontSize: '18px',
+      lineHeight: '1.67'
+    });
+  } else if (textBlockWidth > 300 && textBlockWidth <= 350) {
+    textBlockTitle.css({
+      fontSize: titleFontSize+ 'px'
+    });
+
+    textBlockText.css({
+      fontSize: '16px',
+      lineHeight: '1.63'
+    });
+  } else if (textBlockWidth > 280 && textBlockWidth <= 300) {
+    textBlock.css({
+      height: '210px'
+    });
+
+    textBlockTitle.css({
+      fontSize: titleFontSize+ 'px'
+    });
+
+    textBlockText.css({
+      fontSize: '14px',
+      lineHeight: '1.71'
+    });
+  } else if (textBlockWidth === 280) {
+    textBlock.css({
+      height: '196px'
+    })
+  }
+}
+
 // сохранение дом дерева при загрузке страницы, чтобы можно было
 // менять разметку при ресайзе
 var virtualDOM = $('#root').html();
@@ -177,35 +267,31 @@ $(function () {
   var blocks = $('.js_tabletBlock');
   var root = $('#root');
   var textBlockContainers = $('.block__container_project');
+
+  variousTextBlockFontSize();
+
   // подгоняем отступ для цветного блока, который находятся рядом с обычными
   textBlockContainers.each(function () {
-    var textBlocks = $(this).find('.text-block');
-    var siblings = $(this).siblings('.block');
-    var siblingsTitleHeight = [];
-    var maxSiblingTitleHeight = $(siblings[0]).find('div').outerHeight();
+    textBlocks = $(this).find('.text-block');
+    siblings = $(this).siblings('.block');
+    maxSiblingTitleHeight = $(siblings[0]).find('div').outerHeight();
 
-    if ($(this).children().length === 1) {
-      $(this).css({
-        alignSelf: 'stretch'
-      });
-      textBlocks.css({
-        marginTop: '0'
-      })
-    }
+    if ($(window).width() > 750) {
+      for (var i = 0; i < siblings.length; i++) {
+        siblingsTitleHeight.push($(siblings[i]).find('div').outerHeight());
+      }
 
-    for (var i = 0; i < siblings.length; i++) {
-      siblingsTitleHeight.push($(siblings[i]).find('div').outerHeight());
-    }
-    for (i = 0; i < siblingsTitleHeight.length; i++) {
-      if (siblingsTitleHeight[i] > maxSiblingTitleHeight) {
-        maxSiblingTitleHeight = siblingsTitleHeight;
+      for (i = 0; i < siblingsTitleHeight.length; i++) {
+        if (siblingsTitleHeight[i] > maxSiblingTitleHeight) {
+          maxSiblingTitleHeight = siblingsTitleHeight;
+        }
+      }
+
+      for (i = 0; i < textBlocks.length; i++) {
+        $(textBlocks[i]).css('marginBottom', maxSiblingTitleHeight + 'px');
       }
     }
-    for (i = 0; i < textBlocks.length; i++) {
-      $(textBlocks[i]).css('marginBottom', maxSiblingTitleHeight + 'px');
-    }
   });
-
 
   // вынимает блоки из контейнеров для сетки на планшетах
   function reconstructDOM() {
@@ -243,7 +329,6 @@ $(function () {
     var virtualDOMTablet = root.html();
   }
 
-
   $(window).resize(function () {
     if (root.html() !== virtualDOM && $(window).width() > 1140 && flag) {
       blocksFlag = true;
@@ -262,7 +347,37 @@ $(function () {
         var virtualDOMTablet = root.html();
       }
     }
+
+    changeTextBlockHeight();
+    variousTextBlockFontSize();
+
+    // подгоняем отступ для цветного блока, который находятся рядом с обычными
+    textBlockContainers = $('.block__container_project');
+    textBlockContainers.each(function () {
+      textBlocks = $(this).find('.text-block');
+      siblings = $(this).siblings('.block');
+      siblingsTitleHeight = [];
+      maxSiblingTitleHeight = siblings[0].querySelector('div').clientHeight;
+
+      if ($(window).width() > 750) {
+        for (var i = 0; i < siblings.length; i++) {
+          siblingsTitleHeight.push($(siblings[i]).find('div').outerHeight());
+        }
+
+        for (i = 0; i < siblingsTitleHeight.length; i++) {
+          if (siblingsTitleHeight[i] > maxSiblingTitleHeight) {
+            maxSiblingTitleHeight = siblingsTitleHeight;
+          }
+        }
+
+        for (i = 0; i < textBlocks.length; i++) {
+          $(textBlocks[i]).css('marginBottom', maxSiblingTitleHeight + 'px');
+        }
+      }
+    });
   });
+});
 
-
+window.addEventListener('load', function () {
+  changeTextBlockHeight();
 });
