@@ -49,14 +49,29 @@ $(function () {
     $(this).css('cursor', 'pointer');
     $(this).find('*').css('cursor', 'pointer');
     $('#cursor').css('display', 'none');
-  })
+  });
 
   $(document).on('mouseleave', '.js_cursorPointer', function () {
     $(this).css('cursor', 'none');
     $(this).find('*').css('cursor', 'none');
     $('#cursor').css('display', 'flex');
   })
-})
+});
+
+// truncate
+function truncate() {
+  if ($(window).width() > 576) {
+    $('.text-block p a').dotdotdot({
+      ellipsis: "\u2026",
+      height: 100,
+    });
+  } else {
+    $('.text-block p a').dotdotdot({
+      ellipsis: "\u2026",
+      height: 80,
+    });
+  }
+}
 
 // Hide Header on on scroll down
 var didScroll;
@@ -204,7 +219,7 @@ function variousTextBlockFontSize() {
     });
 
     textBlockTitle.css({
-      fontSize: titleFontSize+ 'px'
+      fontSize: titleFontSize + 'px'
     });
 
     textBlockText.css({
@@ -213,15 +228,20 @@ function variousTextBlockFontSize() {
     })
   } else if (textBlockWidth > 400 && textBlockWidth <= 475) {
     textBlockTitle.css({
-      fontSize: titleFontSize+ 'px'
+      fontSize: titleFontSize + 'px'
     });
 
     textBlockText.css({
       fontSize: '22px'
     })
   } else if (textBlockWidth > 350 && textBlockWidth <= 400) {
+    if ($(window).width() < 750) {
+      textBlock.css({
+        height: 'auto'
+      });
+    }
     textBlockTitle.css({
-      fontSize: titleFontSize+ 'px'
+      fontSize: titleFontSize + 'px'
     });
 
     textBlockText.css({
@@ -229,8 +249,13 @@ function variousTextBlockFontSize() {
       lineHeight: '1.67'
     });
   } else if (textBlockWidth > 300 && textBlockWidth <= 350) {
+    if ($(window).width() < 750) {
+      textBlock.css({
+        height: 'auto'
+      });
+    }
     textBlockTitle.css({
-      fontSize: titleFontSize+ 'px'
+      fontSize: titleFontSize + 'px'
     });
 
     textBlockText.css({
@@ -253,7 +278,16 @@ function variousTextBlockFontSize() {
   } else if (textBlockWidth === 280) {
     textBlock.css({
       height: '196px'
-    })
+    });
+
+    textBlockTitle.css({
+      fontSize: titleFontSize+ 'px'
+    });
+
+    textBlockText.css({
+      fontSize: '14px',
+      lineHeight: '1.71'
+    });
   }
 }
 
@@ -375,6 +409,8 @@ $(function () {
         }
       }
     });
+
+
   });
 });
 

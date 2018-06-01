@@ -101,18 +101,9 @@ $(function () {
 
   $('.main').mousemove(function (event) {
     var parent = event.target.offsetParent;
-    var title = event.target.offsetParent.offsetParent;
-    if (title === null) {
-      cursorType = 'point';
-      $('.cursor').css('transition', '0.2s');
+    var title = $(event.target).closest('.js_block');
 
-      setTimeout(
-        function () {
-          $('.cursor').css('transition', 'none');
-        },
-        200)
-    }
-    if (parent.classList.contains('js_block') || title.classList.contains('js_block')) {
+    if (parent.classList.contains('js_block') || title.hasClass('js_block')) {
       cursorType = 'eye';
       $('.cursor').css('transition', '0.2s');
       $('body').attr('data-time', $(parent).attr('data-time'));

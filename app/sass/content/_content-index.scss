@@ -517,21 +517,11 @@
 		z-index: 1;
 		margin: 0;
 		font-family: 'DomaineSansDisplay', serif;
-		font-size: 151px;
 		font-weight: 300;
 		line-height: 1;
 
 		a {
 			color: white;
-		}
-
-		span {
-			font-style: italic;
-		}
-
-		@include breakpoint(max-width 1140px) {
-			margin-top: -10px;
-			margin-right: 0;
 		}
 	}
 
@@ -543,23 +533,12 @@
 		position: relative;
 		z-index: 1;
 		margin: 0;
-		font-size: 18px;
 		font-weight: 300;
-		line-height: 1.55;
 		letter-spacing: -0.1px;
 		overflow: hidden;
 
 		a {
 			color: white;
-		}
-
-		@include breakpoint(max-width 1440px) {
-			font-size: 16px;
-			line-height: 1.63;
-		}
-
-		@include breakpoint(max-width 1140px) {
-			margin-top: 30px;
 		}
 	}
 
@@ -577,15 +556,6 @@
 		max-width: 475px;
 		min-width: inherit;
 		min-height: inherit;
-		padding: 30px;
-
-		p {
-			max-width: 100%;
-		}
-
-		h2 {
-			font-size: 150px;
-		}
 	}
 
 	@include breakpoint(max-width 750px) {
