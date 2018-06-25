@@ -39,10 +39,7 @@ $(function () {
   });
 
   // text truncate
-  $('.text-block p a').dotdotdot({
-    ellipsis: "\u2026",
-    height: 100,
-  });
+  truncate();
 
   // hide-show custom cursor on header elements
   $(document).on('mouseenter', '.js_cursorPointer', function () {
@@ -382,6 +379,7 @@ $(function () {
       }
     }
 
+    truncate();
     changeTextBlockHeight();
     variousTextBlockFontSize();
 
