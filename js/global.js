@@ -177,9 +177,10 @@ var smallImgContainer, smallImgHeight, textBlocks, siblings, maxSiblingTitleHeig
 var siblingsTitleHeight = [];
 
 function changeTextBlockHeight() {
-  smallImgContainer = document.querySelector('.js_etalon');
-  smallImgHeight = smallImgContainer.clientHeight - smallImgContainer.querySelector('div').clientHeight;
-
+  if (document.querySelector('.js_etalon')) {
+    smallImgContainer = document.querySelector('.js_etalon');
+    smallImgHeight = smallImgContainer.clientHeight - smallImgContainer.querySelector('div').clientHeight;
+  }
   if ($(window).width() <= 1140 && $(window).width() > 750) {
     $('.text-block').each(function () {
       if (!$(this).hasClass('js_changeHeight')) {

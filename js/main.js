@@ -37,15 +37,17 @@ $(function () {
   }
 
   function calculateWidth(currentId, blockSelector) {
-    var current = document.getElementById(currentId);
-    var parent = current.parentElement;
-    var blocks = current.querySelectorAll(blockSelector);
-    var blocksWidth = 0;
-    for (var i = 0; i < blocks.length; i++) {
-      blocksWidth += blocks[i].offsetWidth;
+    if (document.getElementById(currentId)) {
+      var current = document.getElementById(currentId);
+      var parent = current.parentElement;
+      var blocks = current.querySelectorAll(blockSelector);
+      var blocksWidth = 0;
+      for (var i = 0; i < blocks.length; i++) {
+        blocksWidth += blocks[i].offsetWidth;
+      }
+      current.style.width = blocksWidth + 'px';
+      return blocksWidth;
     }
-    current.style.width = blocksWidth + 'px';
-    return blocksWidth;
   }
 
   if ($(window).width() > 1140) {
@@ -59,7 +61,7 @@ $(function () {
       moveSlider(event, 'type', 1, moveX);
       moveSlider(event, 'company', 1, moveX);
     }
-  }
+  };
 
   $('.desc__tags a').hover(
     function (event) {
@@ -75,7 +77,7 @@ $(function () {
         color: '#000',
         backgroundColor: '#fff',
         opacity: '0.8'
-      })
+      });
       if (event.relatedTarget === $('.cursor')[0] && event.delegateTarget === $(this)[0]) {
         $(this).css({
           color: '#fff',
@@ -84,18 +86,20 @@ $(function () {
         })
       }
     }
-  )
+  );
 
   function moveSlider(event, sliderId, multiplier, moveX) {
-    sliderId = document.getElementById(sliderId);
-    var sliderWidth = sliderId.offsetWidth;
-    var container = document.querySelector('.desc__tags');
-    var containerWidth = container.offsetWidth;
-    var mouseMove = (moveX / containerWidth) * 100;
-    var sliderOffset = ((sliderWidth - containerWidth) / 100) * mouseMove;
+    if (document.getElementById(sliderId)) {
+      sliderId = document.getElementById(sliderId);
+      var sliderWidth = sliderId.offsetWidth;
+      var container = document.querySelector('.desc__tags');
+      var containerWidth = container.offsetWidth;
+      var mouseMove = (moveX / containerWidth) * 100;
+      var sliderOffset = ((sliderWidth - containerWidth) / 100) * mouseMove;
 
-    if (document.body.clientWidth >= 1140 && sliderId) {
-      sliderId.style.marginLeft = '-' + sliderOffset + 'px';
+      if (document.body.clientWidth >= 1140 && sliderId) {
+        sliderId.style.marginLeft = '-' + sliderOffset + 'px';
+      }
     }
   }
 
@@ -152,4 +156,4 @@ $(function () {
   document.onmousemove = function (event) {
     getCursorPosition(event);
   }
-})
+});
