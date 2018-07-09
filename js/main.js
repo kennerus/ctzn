@@ -96,8 +96,10 @@ $(function () {
       var containerWidth = container.offsetWidth;
       var mouseMove = (moveX / containerWidth) * 100;
       var sliderOffset = ((sliderWidth - containerWidth) / 100) * mouseMove;
+      var sliderParent = sliderId.parentNode;
+      var sliderParentWidth = sliderParent.offsetWidth;
 
-      if (document.body.clientWidth >= 1140 && sliderId) {
+      if (document.body.clientWidth >= 1140 && sliderId && sliderWidth > sliderParentWidth) {
         sliderId.style.marginLeft = '-' + sliderOffset + 'px';
       }
     }
@@ -130,7 +132,7 @@ $(function () {
         },
         200)
     }
-  })
+  });
   $(".js_block").mousemove(function (event) {
     var eye = $(".cursor__eye");
     var title = $(this).find('h2 span');
@@ -141,7 +143,7 @@ $(function () {
     }
     var titleWidth = title.width();
     var titleHeight = title.height();
-    var title = title.offset();
+    title = title.offset();
     var titleX = title.left + titleWidth / 2;
     var titleY = title.top + titleHeight / 2;
     var rad = Math.atan2(titleX - x, titleY - y);
