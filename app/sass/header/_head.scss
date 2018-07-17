@@ -76,7 +76,7 @@
 			white-space: nowrap;
 			background-color: #fff;
 
-			@include breakpoint(max-width 1140px) {
+			@include breakpoint(max-width 750px) {
 				position: static;
 				padding-left: 0;
 			}
